@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Strategie di controllo e stima dei parametri per modelli epidemiologici applicati al COVID19</title>
+    <title>Data-driven modelling and calibration of multi-agent systems</title>
 
-    <meta name="description" content="Strategie di controllo">
+    <meta name="description" content="Data-driven modelling">
     <meta name="author" content="Andrea Mortaro">
 
     <!-- <link rel="stylesheet" href="dist/reset.css"> -->
@@ -17,28 +17,34 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 -->
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 
 	<section>
-	  <p><b>Università degli Studi di Verona</b><br>
-	    DIPARTIMENTO DI INFORMATICA
+	  <p>
+        <b>Università degli Studi di Verona</b><br>
+            DEPARTMENT OF COMPUTER SCIENCE
 	  </p>
-	  <p style="font-size:25px;">
-	    Corso di Laurea in Matematica Applicata <br>
-		Tesi di Laurea Triennale
+	  <p style="font-size:30px;">
+	    Master Degree in Mathematics <br>
 	  </p>
-	  <h4>Strategie di controllo e stima dei parametri per modelli
-epidemiologici applicati al COVID19</h4>
+	  <h4>Data-driven modelling and calibration of multi-agent systems</h4>
 
 	  <table style="width:80%; frameborder=1; font-size:20px;">
 	    <tr >
-	      <td style="width:50%;">Tesi di laurea di:<br>
+	      <td style="width:50%;">Candidate:<br>
 		Andrea Mortaro
 	      </td>
-	      <td>Relatore:<br>
+	      <td>Supervisor:<br>
 			Prof. Dott. Giacomo Albi<br>
 	      </td>
 	    </tr>
@@ -47,236 +53,921 @@ epidemiologici applicati al COVID19</h4>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade">
-	  <h3>Introduzione</h3>
+	  <h3>Introduction</h3>
 	  <p style="font-size:25px;">
-        Il nostro obiettivo è la descrizione della situazione epidemica italiana causata dal COVID19 attraverso i modelli SIR e SEIR.
-I due principali concetti affrontati nella tesi sono:
+        Our aim is to study interaction dynamics and model them using data-driven techniques in a traffic context.
+        The emphasis of this thesis is on:
 	  </p>
 	  <ul style="font-size:25px;">
-	    <li>Strategie di controllo;</li>
-	    <li>Stima dei parametri epidemiologici dei modelli.</li>
+	    <li>Discrete-to-continuum transition in traffic modelling.</li>
+	    <li>Neural networks for modelling interactions with data.</li>
 	  </ul>
+	</section>
+
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+	  <h3>Traffic models</h3>
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+	  <h3>Traffic models</h3>
+	  <p style="text-align:left; font-size:25px;">
+	    Our focus lies in uncovering the underlying connection in traffic modelling between:
+	  </p>
+	  <ul style="font-size:25px;">
+	    <li><b><i>Macroscopic models</i></b>, as the <i>Lighthill–Whitham–Richards (LWR) model</i>;</li>
+	    <li><b><i>Microscopic models</i></b>, as the <i>Follow-The-Leader</i>-type <i>(FTL)</i> models.</li>
+	  </ul>
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Macroscopic models</h5>
+
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Macroscopic models</h5>
+	  
+	  \[
+\rho_{t} + \left( f(\rho) \right)_{x} = 0, \quad t>0,\, x \in \mathbb{R},
+	  \]
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Microscopic models</h5>
+
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Microscopic models</h5>
+	  
+	  \[
+	  
+\left\{
+    \begin{aligned}
+      & \dot{x}_{n} = v_{max} \\
+      & \dot{x}_{i} = v \left( \dfrac{ \ell }{ x_{i+1} - x_{i} } \right), \quad &&i = 1,... , n-1
+    \end{aligned}
+\right.
+	  
+	  \]
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+    IMMAGINE QUALITATIVA?
+
 	</section>
 
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+\begin{equation}
+\label{cauchy}
+\left\{
+    \begin{aligned}
+        & \rho_{t} + \left(f(\rho)\right)_{x} = 0, \quad &&(t,x) \in (0, +\infty) \times \mathbb{R}, \\
+        & \rho(0,x) = \bar{\rho}(x) \quad &&x \in \mathbb{R},
+    \end{aligned}
+\right.
+\end{equation}
+
+        <p style="text-align:left; font-size:30px;">
+        where $f(\rho)\ \dot{=}\ \rho\ v(\rho)$.
+        </p>
+        
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+      <p style="text-align:left; font-size:25px;">
+  	  The main properties of the solutions of the Cauchy problem are:	  
+      	  <ul style="text-align:left; font-size:25px;">
+	            <li>if $\bar{\rho}$ has compact support $\implies$ the support of any solution has a finite speed of propagation;</li>
+	            <li>The Maximum Principle holds true;</li>
+	            <li>if $\bar{\rho}(x) \geq 0 \implies \rho(x) \geq 0 \quad \forall t >0$;</li>
+	            <li>The total mass $\int_{\mathbb{R}} \rho(t, x)\, dx$ is time independent:
+	            \[
+              \int_{\mathbb{R}} \rho(t, x)\, dx = L\ \dot{=} \int_{\mathbb{R}} \bar{\rho}(x)\, dx \quad  \forall t \geq 0.
+	            
+	            \]
+	            </li>
+	      </ul>
+      </p>
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+<p style="text-align:left; font-size:25px;">	  
+
+Assume that $\bar{\rho}$ and $v:\mathbb{R}_{+}\rightarrow\mathbb{R}$ satisfy:   
+
+\begin{equation} \label{hp:rho} 
+\bar{\rho} \in \mathcal{L}^\infty(\mathbb{R}) \cap \mathcal{L}^1(\mathbb{R}),\quad \bar{\rho} \geq 0,
+\end{equation}
+
+\begin{equation} \label{hp:v}
+v \in \mathcal{C}^1(\mathbb{R}_{+}),\quad v'(\rho) < 0\ for\ \rho > 0.
+\end{equation}
+
+</p>
+
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+<p style="text-align:left; font-size:25px;">	  
+
+Assume that $\bar{\rho}$ and $v:\mathbb{R}_{+}\rightarrow\mathbb{R}$ satisfy:   
+
+\begin{equation*} 
+\bar{\rho} \in \mathcal{L}^\infty(\mathbb{R}) \cap \mathcal{L}^1(\mathbb{R}),\quad \bar{\rho} \geq 0,
+\end{equation*}
+
+\begin{equation*}
+v \in \mathcal{C}^1(\mathbb{R}_{+}),\quad v'(\rho) < 0\;\; \forall\rho > 0.
+\end{equation*}
+
+In some cases we require the additional assumptions:
+
+\begin{equation} \label{addhp:rho}
+\bar{\rho} \in \mathcal{BV}(\mathbb{R}),
+\end{equation}
+
+\begin{equation} \label{addhp:v}
+\mathbb{R}^{+} \ni \rho \mapsto \rho\ v'(\rho) \in \mathbb{R}^{-}
+\end{equation}
+
+</p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+      <p style="text-align:left; font-size:25px;">
+      
+For sake of simplicity, we assume:   
+
+\begin{equation*} 
+L\ \dot{=}\|\bar{\rho}\|_{\mathcal{L}^1(\mathbb{R})} = 1
+\end{equation*}
+
+\begin{equation*} 
+v_{\text{max}}\ \dot{=}\ v(0),\quad v_{\text{max}} > 0
+\end{equation*}
+
+      </p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+<p style="text-align:left;font-size:25px;">
+   	  
+<b>Definition 1</b> (Entropy solution).
+<i>Let the initial datum $\bar{\rho}$ satisfy \eqref{hp:rho}. A weak solution $\rho \in \mathcal{L}^\infty(\mathbb{R})$ to the Cauchy problem \eqref{cauchy} is called <b>entropy solution</b> to the Cauchy problem if:
+
+\begin{equation*}
+\iint\limits_{\mathbb{R}^+ \times \mathbb{R}}
+\bigg[ |\rho(t,x) - k|\varphi_{t}(t,x)\ +\ \text{sign}(\rho(t,x) - k) \left[ f(\rho(t,x)) - f(k)\right]\varphi_{x}(t,x)\bigg] dx\ dt\ \geq 0
+\end{equation*}
+
+for all $\varphi \in \mathcal{C}_{c}^\infty((0, +\infty) \times \mathbb{R})$ and for all $k \geq 0$.</i>
+
+</p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+<p style="text-align:left;font-size:25px;">
+   	  
+<b>Theorem 1</b> (Existance and uniqueness).
+<i>
+Assume that \eqref{hp:rho} and \eqref{hp:v} are satisfied. Then there exists a unique entropy solution according to <i>Definition 1</i>.
+</i>
+</p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+<p style="text-align:left;font-size:25px;">
+   	  
+<b>Theorem 1</b> (Existance and uniqueness).
+<i>
+Assume that \eqref{hp:rho} and \eqref{hp:v} are satisfied. Then there exists a unique entropy solution according to <i>Definition 1</i>.
+</i>
+
+<br> <br>
+
+<b>Theorem 2</b> (Convergence).
+<i>
+Assume that \eqref{hp:rho} and \eqref{hp:v} are satisfied. Moreover, assume that at least one of the two conditions \eqref{addhp:rho} and \eqref{addhp:v} are satisfied.
+Then $\rho^{n}$ converges (up to a subsequence) almost everywhere and in $\mathcal{L}^{1}_{loc}$ on $\mathbb{R}_{+} \times \mathbb{R}$ to the unique entropy solution $\rho$ to the Cauchy problem \eqref{cauchy}, according to <i>Definition 1</i>.
+</i>
+
+</p>
+
+	</section>
+	
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+For $n \in \mathbb{N}$ sufficiently large, we set $\ell_{n} \dot{=}\ \frac{1}{n}$ and we define:
+
+\begin{equation*}
+\bar{x}^{n}_{1}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{-\infty}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\},
+\end{equation*}
+
+and for $i\ \in\ \{2,...,n-1\}$ recursively:
+\begin{equation*}
+\bar{x}^{n}_{i}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{\bar{x}^{n}_{i-1}}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\}.
+\end{equation*}
+
+</p>
+
+	</section>
+	
+	
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+From this definition we get a monotonicity property:
+
+\begin{equation*}
+\bar{x}^{n}_{1}<\bar{x}^{n}_{2}<...<\bar{x}^{n}_{n-1},
+\end{equation*}
+
+and we have equal mass $\ell_{n}$ on each interval:
+\begin{equation*}
+\int_{-\infty}^{\bar{x}^{n}_{1}} \bar{\rho}(x) dx\ =\ \int_{\bar{x}^{n}_{i-1}}^{\bar{x}^{n}_{i}} \bar{\rho}(x) dx\ =\ \int_{\bar{x}^{n}_{n-1}}^{+\infty} \bar{\rho}(x) dx\ =\ \ell_n,\qquad i \in \{2,...,n-1\}.
+\end{equation*}
+
+</p>
+
+	</section>
+	
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+Let the particles $\{\bar{x}^{n}_{i}\}^{n-1}_{i=1}$ evolve according to the <i>Follow-The-Leader</i> system of ODEs:
+
+\begin{equation} \label{ftl}
+\left\{
+    \begin{aligned}
+        & \dot{x}^{n}_{i}(t) = v(R^{n}_{i}(t)),\quad\ &i \in \{1,...,n-2\},\\
+        & \dot{x}^{n}_{n-1}(t) = v_{max}, \\
+        & x^{n}_{i}(0) = \bar{x}^{n}_{i},\quad\ &i \in \{1,...,n-1\}, \\
+    \end{aligned}
+\right.
+\end{equation}
+
+where we define:
+
+\begin{equation} \label{Ri}
+R^{n}_{i}(t)\ \dot{=}\ \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)}, \qquad
+R\ \dot{=}\ \|\bar{\rho}\|_{\mathcal{L}^{\infty}(\mathbb{R})},
+\end{equation}
+
+</p>
+
+	</section>
+	
+	
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+
+<b>Lemma 1</b> (Discrete Maximum Principle).
+<i>
+Assume that \eqref{hp:rho} and \eqref{hp:v} are satisfied. Then $\forall t \in \mathbb{R}_{+}$ the solution to \eqref{ftl} satisfies
+
+\begin{equation*}
+x^{n}_{i+1}(t)-x^{n}_{i}(t) \geq \frac{\ell_{n}}{R}, \qquad i \in \{1,...,n-2\}.
+\end{equation*}
+
+</i>
+
+</p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+To get a time-depending density with unit mass we set two <i>artificial particles</i> $x^{n}_{0}(t)$ and $x^{n}_{n}(t)$ for all $t \geq 0$ as:
+
+\begin{equation} \label{artp}
+x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
+\end{equation}
+
+</p>
+
+	</section>	
+	
+	
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+To get a time-depending density with unit mass we set two <i>artificial particles</i> $x^{n}_{0}(t)$ and $x^{n}_{n}(t)$ for all $t \geq 0$ as:
+
+\begin{equation*}
+x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
+\end{equation*}
+
+and let
+\begin{equation*}
+R^{n}_{0}(t)\ \dot{=}\ R^{n}_{1}(t), \qquad R^{n}_{n}(t)\ \dot{=}\ R^{n}_{n-1}(t).
+\end{equation*}
+
+</p>
+
+	</section>	
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+\begin{equation} \label{density:def}
+  \begin{aligned}
+  \rho^{n}(t,x)\ \dot{=}&\ \sum_{i=0}^{n-1} R^{n}_{i}(t)\ \unicode{x1D7D9}_{[x^{n}_{i}(t),x^{n}_{i+1}(t)]}(x)\\
+  =&\ \sum_{i=0}^{n-1} \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)}\  \unicode{x1D7D9}_{[x^{n}_{i}(t),x^{n}_{i+1}(t)]}(x),
+\end{aligned}
+\end{equation}
+
+</p>
+
+	</section>	
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+$\rho^{n}(t,x)$ has the properties:
+
+\begin{equation*}
+\int_{\mathbb{R}}\rho^{n}(t,x) dx\ = n,\\
+\rho^{n}(t,\cdot) \text{ is compactly supported $\forall\,n,t$},\\
+\|\rho^{n}(t,\cdot)\|_{\mathcal{L}^{\infty}(\mathbb{R})} \leq R\ \dot{=}\ \|\bar{\rho}\|_{\mathcal{L}^{\infty}(\mathbb{R})} \quad \forall t \geq 0.
+\end{equation*}
+
+</p>
+
+	</section>	
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Follow-The-Leader model: approximating scheme.</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+If $\text{supp}\left[ \bar{\rho} \right]$ is bounded either from above or from below, then we can improve the construction as follows:
+
+  <ul style="text-align:left; font-size:25px;">
+        <li>
+<b>$\text{supp}\left[ \bar{\rho} \right]$ bounded from above</b>:
+<br>
+Set $x^{n}_{n}$ on $\max\{ \text{supp}\left[ \bar{\rho} \right] \}$ initially and let evolve  with maximum speed $v_{max}$, and the preceding particle $x^{n}_{n-1}$ let evolve according to $\dot{x}^{n}_{i}(t) = v\left( \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)} \right)$;
+        </li>
+        <li>
+<b>$\text{supp}\left[ \bar{\rho} \right]$ bounded from below</b>:
+<br>
+Set $x^{n}_{0}$ on $\min\{ \text{supp}\left[ \bar{\rho} \right] \}$ initially and let it evolve via $\dot{x}^{n}_{0}(t) = v \left( \frac{\ell_{n}}{x^{n}_{1}(t)-x^{n}_{0}(t)} \right)$.
+        </li>
+  </ul>
+
+</p>
+
+	</section>	
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof</h6>
+
+	</section>
+	
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+<b>Theorem 2</b> (Convergence).
+<i>
+Assume that \eqref{hp:rho} and \eqref{hp:v} are satisfied. Moreover, assume that at least one of the two conditions \eqref{addhp:rho} and \eqref{addhp:v} are satisfied.
+Then $\rho^{n}$ converges (up to a subsequence) almost everywhere and in $\mathcal{L}^{1}_{loc}$ on $\mathbb{R}_{+} \times \mathbb{R}$ to the unique entropy solution $\rho$ to the Cauchy problem \eqref{cauchy}, according to <i>Definition 1</i>.
+</i>
+
+</p>
+
+    </section>	
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+To gain compactness of the approximating scheme we need a uniform control for the $\mathcal{BV}$-norm. In our case, the compactness can be obtained in two different ways.
+
+</p>
+
+    </section>	
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>First way:</b>
+A uniform $\mathcal{BV}$ contraction property for $\rho^{n}$, which requires $\mathcal{BV}$ initial data \eqref{addhp:rho}.
+
+<br>
+<br>
+
+<b>Proposition 1</b>.
+<i>
+Assume that \eqref{hp:rho}, \eqref{addhp:rho} and \eqref{hp:v} are satisfied. Then, for all $n \in \mathbb{N}$ one has
+\begin{equation}
+TV\left[\rho^{n}(t,\cdot)\right] \leq TV\left[\rho^{n}(0,\cdot)\right] \leq TV\left[\bar{\rho}\right].
+\end{equation}
+</i>
+
+</p>
+
+    </section>	
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>Second way:</b> Use the <i>discrete Oleinik-type inequality</i>, which doesn't require the extra-assumption \eqref{addhp:rho} on $\bar{\rho}$, but only the additional assumpton \eqref{addhp:v} on $v$.
+
+<br>
+<br>
+
+
+<b>Proposition 2</b>.
+<i>
+Assume that \eqref{hp:rho}, \eqref{hp:v} and \eqref{addhp:v} are satisfied. Then, for all $n \geq 0$ one has
+\begin{equation} \label{oleinik:ineq}
+\dfrac{\dot{x}^{n}_{i+1}(t)-\dot{x}^{n}_{i}(t) }{x^{n}_{i+1}(t)-x^{n}_{i}(t) } \leq \frac{1}{t}, \qquad i \in \{0,...,n-1\}.
+\end{equation}
+</i>
+
+<b>Proposition 3</b>.
+
+<i>
+Assume that \eqref{hp:rho}, \eqref{hp:v} and \eqref{addhp:v} are satisfied. Let $\delta > 0,\, a < b$. Then:
+
+\begin{equation*}
+\sup_{t \geq \delta} \text{TV} \big(\rho^{n}(t,\cdot); \left[ a,b \right]\big)
+\end{equation*}
+
+is uniformly bounded with respect to $n$.
+</i>
+
+</p>
+
+    </section>	
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+To achieve strong $\mathcal{L}^{1}$ compactness w.r.t. both $x$ and $t$ we consider <i>1-Wasserstein distance</i>.
+
+<br>
+<br>
+
+<b>Definition 2</b> (1-Wasserstein distance).
+<i>
+  Let $\mu$ be a probability measure on $\mathbb{R}$. Define the pseudo-inverse variable $X_{\mu} \in \mathcal{L}^{1}([0,1])$ as
+  \begin{equation*}
+    X_{\mu}(z)\ \dot{=}\ \inf\left\{ x \in \mathbb{R} : \mu \left( (-\infty,x] \right) > z \right\}.
+  \end{equation*}
+  
+  Given two probability measures $\mu$ and $\nu$ on $\mathbb{R}$, we set:
+  \begin{equation*}
+    W_{1}(\mu,\nu)\ \dot{=}\ \|X_{\mu} - X_{\nu}\|_{\mathcal{L}^1_{[0,1]}}.
+  \end{equation*}
+  
+</i>
+
+    </section>	
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+<b>Proposition 4</b>.
+<i>
+
+Assume \eqref{hp:rho} and \eqref{hp:v} are satisfied. There exists a constant $C$ independent of $n$, such that
+  \begin{equation*}
+    W_{1} (\rho^{n}(t,\cdot), \rho^{n}(s,\cdot) ) \leq C |t-s| \quad \forall \text{t,s} > 0.
+  \end{equation*}
+  
+</i>
+
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: compactness</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+<b>Theorem 3</b> (Generalised Aubin-Lions lemma).
+
+<i>
+  Let $\,T > 0, \,a,b \in \mathbb{R}, a < b$ and $v$ satisfy \eqref{hp:v}. Let $\rho^{n}$ be a sequence in $\mathcal{L}^{\infty} \left( (0,T);\ \mathcal{L}^{1}(\mathbb{R}) \right)$ with:
+  
+    \begin{equation*}
+\rho^{n} (t, \cdot) \geq 0, \quad \| \rho^{n} (t, \cdot) \|_{\mathcal{L}^{1}(\mathbb{R})} = 1 \; \forall n \in \mathbb{N}, \; \forall t \in \left[ 0,T \right].
+     \end{equation*}
+  Assume further that:
+</i>
+
+   <ul style="text-align:left; font-size:25px;">
+        <li>
+$\sup_{n \in \mathbb{N}} \left[ \int_{0}^{T} \big[ \| v(\rho^{n}(t, \cdot)) \|_{\mathcal{L}^{1} ( \left[ a,b \right] ) } + TV \left( v(\rho^{n}(t,\cdot));\ \left[ a,b \right] \right)  \big] dt \right] < +\infty,$
+        </li>
+        <li>
+$\exists\, C>0$ independent of $n$ such that
+    \begin{equation*}
+       W_{1} (\rho^{n}(t,\cdot), \rho^{n}(s,\cdot) ) \leq C |t-s| \quad \forall \text{t,s} \in (0,T).
+     \end{equation*}
+        </li>
+  </ul>
+
+<p style="text-align:left;font-size:25px;">
+
+<i>
+Then $\rho^{n}$ is strongly relatively compact in $\mathcal{L}^{1} \left( \left[ 0,T \right] \times \left[ a,b \right]\right)$.  
+</i>
+
+</p>
+
+    </section>
+
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+Once gained strong $\mathcal{L}^{1}$ compactness and by passing from $\left[ \delta, T \right]$ to $( 0,T )$, one can show that $\rho^{n}$ admits a converging subsequence a.e. in $\mathcal{L}^{1} \left( \left( 0,T \right) \times \mathbb{R} \right)$. Denote $\rho$ such limit.
+
+</p>
+
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>Step 1: $\rho$ is a weak solution to \eqref{cauchy}.</b>
+Let $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \mathbb{R}_{+} \times \mathbb{R} \right)$ and compute:
+
+\begin{align*}
+
+\def\avint{\mathop{\,\rlap{-}\!\!\int}\nolimits}
+
+  & \iint_{\mathbb{R}_{+} \times \mathbb{R}} \Big[ \rho^{n} (t,x)\, \varphi_{t} \left( t, x \right)  + \rho^{n}(t,x)\, v( \rho^{n}(t,x) )\, \varphi_{x} \left( t,x \right)  \Big] dx\, dt\\
+  & \leq \ 2 \ell_{n} \| \varphi (0,\cdot) \|_{\mathcal{L}^{\infty}(\mathbb{R})} + \sum_{i=0}^{n-1} \left| \int_{\bar{x}_{i}^{n}}^{\bar{x}_{i+1}^{n}} \bar{\rho} (x) \left[ \varphi (0,x) - \avint_{\bar{x}_{i}^{n}}^{\bar{x}_{i+1}^{n}} \varphi (0,y)\, dy \right] dx \right|
+\end{align*}
+
+</p>
+
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>Step 1.</b>
+<i>Case 1: $\bar{\rho}$ is compactly supported.</i>
+
+Assume $\text{supp}[\varphi] \subset [\delta, T] \times \mathbb{R}$ for $0 < \delta < T$,
+
+\begin{align*}
+  & \Bigg| \iint_{\mathbb{R}_{+} \times \mathbb{R}} \Big[ \rho^{n} (t,x)\, \varphi_{t} \left( t, x \right)  + \rho^{n}(t,x)\, v( \rho^{n}(t,x) )\, \varphi_{x} \left( t,x \right)  \Big] dx \, dt \Bigg| \nonumber \\
+ & \leq\  \dfrac{T\, \text{Lip}[ \varphi ] \ell_{n}}{2} \Bigg[ v_{max} - v(R) + \sup_{t \in [ \delta,T ]} TV \left( v (\rho^{n} (t, \cdot)) ; J(T) \right) \Bigg]
+\end{align*}
+
+where $J(T) \dot{=} \left[ \min \left\{ \text{supp} \left[ \bar{\rho} \right] \right\} + v(R)\, T,\; \max \left\{ \text{supp} \left[ \bar{\rho} \right] \right\} + v_{max}\, T \right] $.
+
+</p>
+
+    </section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>Step 1.</b>
+<i>Case 2: $\bar{\rho}$ is not compactly supported.</i>
+Assume $\text{supp} \left[ \bar{\rho} \right]$ unbounded both from above and from below. 
+
+<br>
+<br>
+
+Assume $\text{supp} \left[ \varphi \right] \subset \left[ \delta, T\right] \times \left[ a,b \right]$ for some $0 < \delta < T$ and $ a < b$. Let $n \in \mathbb{N}$ be sufficiently large so that $\bar{x}_{1}^{n} < a - v_{max}\, T$ and $\bar{x}_{n-1}^{n} > b - v(R)\, T$.
+
+<br>
+<br>
+
+Therefore $x_{1}^{n}(t) < a$ and ${x}_{n-1}^{n}(t) > b \;\; \forall t \in \left[ 0,T \right]$.
+
+<p style="text-align:left;font-size:20px;">
+\begin{align*}
+  & \Bigg| \iint_{\mathbb{R}_{+} \times \mathbb{R}} \Big[ \rho^{n} (t,x)\, \varphi_{t} \left( t, x \right)  + \rho^{n}(t,x)\, v( \rho^{n}(t,x) )\, \varphi_{x} \left( t,x \right)  \Big] dx \; dt \Bigg| \\
+  & =\  \Bigg| \sum_{i=0}^{n-1} \int_{\mathbb{R}_{+}} R_{i}^{n} (t) \Bigg[ \int_{x_{i}^{n}(t)}^{x_{i+1}^{n}(t)} \varphi_{t} \left( t,x \right) dx + v(R_{i}^{n} (t)) \Big[ \varphi(t, x_{i+1}^{n}(t)) - \varphi(t, x_{i}^{n}(t)) \Big] \Bigg] dt \Bigg|
+\end{align*}
+</p>
+
+</p>
+
     </section>
 
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
-	  <p style="text-align:left; font-size:25px;">
-	    Alla base del modello vi è la suddivisione della popolazione in tre compartimenti:
-	  </p>
-	  <ul style="font-size:25px;">
-	    <li><i>i Suscettibili (S)</i>, ovvero gli individui non infetti ma che possono contrarre l’infezione;</li>
-	    <li><i>gli Infetti (I)</i>, ovvero gli indidui in grado di trasmettere la malattia;</li>
-	    <li><i>i Rimossi (R)</i>, ovvero gli individui che non partecipano al processo epidemico, come i guariti e i deceduti;</li>
-	  </ul>
-	</section>
+      <h3>Traffic models</h3>
+
+	  <h6>Sketch of the proof: convergence</h6>
+
+<p style="text-align:left;font-size:25px;">
+<b>Step 2: $\rho$ satisfies the entropy inequality in Definition 1.</b>
+
+Let $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0,+\infty \right) \times \mathbb{R} \right)$ with $\varphi \geq 0$ and $k \geq 0$.
+
+<p style="text-align:left;font-size:20px;">
+\begin{align*}
+  & \iint\limits_{\mathbb{R}^{+} \times \mathbb{R}} \bigg[ |\rho(t,x) - k| \varphi_{t}(t,x)\ +\ \text{sign}(\rho(t,x) - k) \left[ f(\rho(t,x)) - f(k)\right]\varphi_{x}(t,x)\bigg] dx \, dt \\
+  & =\ k \int_{\mathbb{R}^{+}} \Big[ \big[ v(k) - \dot{x}_{0}^{n}(t) \big] \varphi(t, x_{0}^{n}(t)) + \big[ v(k) - \dot{x}_{n}^{n}(t) \big] \varphi(t, x_{n}^{n}(t)) \Big] dt\\
+  & \hspace{20pt} + \sum_{i=0}^{n-1} \int_{\mathbb{R}^{+}} \text{sign} \left( R_{i}^{n}(t) - k \right) \Bigg[ - \dot{R}_{i}^{n} (t) \left( \int_{x_{i}^{n}(t)}^{x_{i+1}^{n}(t)} \varphi (t,x) dx \right)\\
+  & \hspace{20pt} - \Big[ R_{i}^{n} (t) \left[ \dot{x}_{i+1}^{n}(t) - v(R_{i}^{n} (t)) \right] - k \left[ \dot{x}_{i+1}^{n}(t) - v(k) \right] \Big] \varphi (t, x_{i+1}^{n}(t))\\
+  & \hspace{20pt} + \Big[ R_{i}^{n} (t) \left[ \dot{x}_{i}^{n}(t) - v(R_{i}^{n} (t)) \right] - k \left[ \dot{x}_{i}^{n}(t) - v(k) \right] \Big] \varphi (t, x_{i}^{n}(t)) \Bigg] dt.\\
+\end{align*}
+</p>
+
+</p>
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
-	  <p style="text-align:left; font-size:25px;">
-	    Alla base del modello vi è la suddivisione della popolazione in tre compartimenti:
-	  </p>
-	  <ul style="font-size:25px;">
-	    <li><i>i Suscettibili (S)</i>, ovvero gli individui non infetti ma che possono contrarre l’infezione;</li>
-	    <li><i>gli Infetti (I)</i>, ovvero gli indidui in grado di trasmettere la malattia;</li>
-	    <li><i>i Rimossi (R)</i>, ovvero gli individui che non partecipano al processo epidemico, come i guariti e i deceduti;</li>
-	  </ul>
-	  <img src="immagini/sir.svg" alt="modello sir" width="100%""/>
-	</section>
+      <h3>Traffic models</h3>
 
+	  <h6>Sketch of the proof: convergence</h6>
 
+<p style="text-align:left;font-size:25px;">
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
-	  <img src="immagini/sir.svg" alt="modello sir" width="70%""/>
-	  <p style="text-align:left; font-size:25px;">
-	    Supponiamo inoltre che:
-	  </p>
-	  <ul style="text-align:left; font-size:25px;">
-	    <li>il tempo di incubazione della malattia sia trascurabile;</li>
-	    <li>il contagio avvenga per contatto diretto;</li>
-	    <li><i>mixing</i> omogeneo;</li>
-	    <li>l'infezione conferisca una immunità permanente.</li>
-	  </ul>
-	</section>
+<b>Step 2.</b>
+<i>Case 1: $\bar{\rho}$ is compactly supported.</i>
 
+Assume $\text{supp}[\varphi] \subset [\delta, T] \times \mathbb{R}$ for $0 < \delta < T$,
+
+<p style="text-align:left;font-size:20px;">
+\begin{align*}
+  & \iint\limits_{\mathbb{R}^{+} \times \mathbb{R}} \bigg[ |\rho(t,x) - k|\varphi_{t}(t,x)\ + \text{sign} ( \rho(t,x) - k) \left[ f(\rho(t,x)) - f(k)\right]\varphi_{x}(t,x)\bigg] dx \, dt \\
+  =&\ k \int_{\mathbb{R}^{+}} \Big[ \big[ v(k) - v(R_{0}^{n}(t)) \big] \varphi(t, x_{0}^{n}(t)) - \big[ v(k) - v_{max} \big] \varphi(t, x_{n}^{n}(t)) \Big] dt\\
+  &+ \sum_{i=0}^{n-2} \int_{\mathbb{R}^{+}} \text{sign} \left( R_{i}^{n}(t) - k \right) \Bigg[ \dfrac{R^{n}_{i}(t)^{2}}{\ell_{n}} \Bigg( \int_{x_{i}^{n}(t)}^{x_{i+1}^{n}(t)} \varphi (t,x) - \varphi (t, x_{i+1}^{n}(t)) dx \Bigg)  \Big[ v(R^{n}_{i+1}(t)) - v(R^{n}_{i}(t))\Big] \\
+  & \hspace{5pt}  + k \Big[ \left[ v(R^{n}_{i+1}(t)) - v(k) \right] \varphi (t, x_{i+1}^{n}(t)) - \left[ v(R^{n}_{i}(t)) - v(k) \right] \varphi (t, x_{i}^{n}(t)) \Big] \Bigg] dt\\
+  &+ \int_{\mathbb{R}^{+}} \text{sign} \left( R_{n-1}^{n}(t) - k \right) \Bigg[ \dfrac{R^{n}_{n-1}(t)^{2}}{\ell_{n}} \Bigg( \int_{x_{n-1}^{n}(t)}^{x_{n}^{n}(t)} \varphi (t,x) - \varphi (t, x_{n}^{n}(t)) dx \Bigg) \Big[ v_{max} - v(R^{n}_{n-1}(t)) \Big]\\
+  & \hspace{5pt}  + k \Big[ \left[ v_{max} - v(k) \right] \varphi (t, x_{n}^{n}(t)) - \left[ v(R^{n}_{n-1}(t)) - v(k) \right] \varphi (t, x_{n-1}^{n}(t)) \Big] \Bigg] dt
+\end{align*}
+
+</p>
+
+</p>
+    </section>
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
+      <h3>Traffic models</h3>
 
-	  \[\begin{aligned}
-	  \left\{
-	  \begin{alignedat}{3}
-          \dot{S}(t) & = -\beta S(t)I(t) \\
-          \dot{I}(t) & = \beta S(t)I(t) {} - {} \gamma I(t)\\
-          \dot{R}(t) & = \gamma I(t)
-	  \end{alignedat}
+	  <h6>Sketch of the proof: convergence</h6>
 
-	  \right.
+<p style="text-align:left;font-size:25px;">
 
-	  \end{aligned} \]
+<b>Step 2.</b>
+<i>Case 2: $\bar{\rho}$ is not compactly supported.</i>
+Assume $\text{supp} \left[ \bar{\rho} \right]$ unbounded both from above and from below. 
 
-  	  <p style="text-align:left;font-size:25px;">
-      	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      	  con parametri:
-  	  </p>
-  	  <ul style="text-align:left; font-size:25px;">
-	    <li> $\beta$:  tasso di trasmissione della malattia;</li>
-	    <li>$\gamma$:  tasso di rimozione.</li>
-	  </ul>
+</p>
 
-	</section>
+<p style="text-align:left;font-size:20px;">
 
+\begin{align*}
+  & \iint\limits_{\mathbb{R}^{+} \times \mathbb{R}} \bigg[ \left| \rho(t,x) - k \right| \varphi_{t}(t,x)\ + \text{sign} (\rho(t,x) - k) \left[ f(\rho(t,x)) - f(k)\right] \varphi_{x}(t,x)\bigg] dx \, dt \\
+  & = \sum_{i=1}^{n-2} \int_{\mathbb{R}^{+}} \Bigg[ | R_{i-1}^{n}(t) - k | \Bigg( \int_{x_{i}^{n}(t)}^{x_{i+1}^{n}(t)} \varphi_{t} (t,x) \Bigg) + \text{sign} \left( R_{i}^{n}(t) - k \right) \Big[  f(R_{i}^{n}(t)) - f(k) \Big] \Big[ \varphi (t, x_{i+1}^{n}(t)) -  \varphi (t, x_{i}^{n}(t)) \Big] \Bigg] dt
+\end{align*}
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
-	  <img src="immagini/piano_fasi_SIR.svg" alt="fasi sir" width="50%"/>
-	</section>
+</p>
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
+<p style="text-align:left;font-size:25px;">
 
-	  <p style="text-align:left;font-size:25px;">
-      	  Si può dimostrare che il triangolo T è una regione positivamente invariante.
-  	  \[
-  	  T = \Big\{
-            (S,I): S \geq 0,\;I \geq 0,\;S+I \leq N
-          \Big\}
-      \]
-  	  </p>
-	  <img src="immagini/piano_fasi_SIR.svg" alt="fasi sir" width="35%"/>
-	</section>
+for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \right) \times \mathbb{R} \right)$
 
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SIR</h3>
-
-	  <p style="text-align:left; font-size:25px;">
-        Come avviene per le infezioni causate da altri coronavirus, anche il COVID-19 presenta un periodo di incubazione e quindi risulta ragionevole estendere il modello SIR.
-  	  </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SEIR</h3>
-
-	  <p style="text-align:left; font-size:25px;">
-	  Introduciamo una classe intermedia degli <i>Esposti (E)</i> che rappresenta gli individui contagiati ma non ancora infettivi.
-	  </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SEIR</h3>
-
-	  <p style="text-align:left; font-size:25px;">
-	  Introduciamo una classe intermedia degli <i>Esposti (E)</i> che rappresenta gli individui contagiati ma non ancora infettivi.
-	  </p>
-  	  <img src="immagini/seir.svg" alt="seir" width="100%"/>
-	</section>
+</p>
+    </section>
 
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
-	  <h3>Il modello SEIR</h3>
+      <h3>Traffic models</h3>
 
-	  \[
-	  \begin{aligned}
-	  \left\{
-	  \begin{alignedat}{3} \label{SEIR}
-          \dot{S}(t) & = -\beta S(t)I(t) \\
-          \dot{E}(t) & =  \beta S(t)I(t) - \mu E(t)\\
-          \dot{I}(t) & = \mu E(t) {} - {} \gamma I(t) \\
-          \dot{R}(t) & = \gamma I(t)
-	  \end{alignedat}
-	  \right.
-	  \end{aligned}
-	  \]
-	  <p style="text-align:left; font-size:25px;">
-        dove $\mu$ rappresenta il tasso di incubazione dell’infezione.
-	  </p>
-	</section>
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SEIR</h3>
 
-	  <img src="immagini/piano_fasi_SEIR.svg" alt="fasi seir" width="50%""/>
-
-	</section>
+</p>
+    </section>
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Il modello SEIR</h3>
-
- 	  <p style="text-align:left; font-size:25px;">
-        Il tetraedro T è una regione positivamente invariante.
-        \[
-        T =
-        \Big\{
-        (S,E,I): S \geq 0,\;E \geq 0,\;I \geq 0,\;S+E+I \leq N
-        \Big\}
-        \]
-	  </p>
-
-	  	  <img src="immagini/piano_fasi_SEIR.svg" alt="fasi seir" width="35%""/>
-
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Appiattire la curva</h3>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Appiattire la curva</h3>
-
- 	  <p style="font-size:25px;">
-	  A livello qualitativo, il modello SIR permette di sottolineare che un basso $\mathcal{R}_0$ abbia l’effetto di <i>appiattire la curva</i> degli infetti.
-	  </p>
-
-	  <img src="immagini/flatteningthecurve.svg" alt="modello sir" width="50%"/>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-	  <h3>Appiattire la curva</h3>
-   	  <p style="font-size:25px;">
-	  A livello qualitativo, il modello SIR permette di sottolineare che un basso $\mathcal{R}_0$ abbia l’effetto di <i>appiattire la curva</i> degli infetti.
-	  </p>
-	  <img src="immagini/flatteningthecurve.svg" alt="flat" width="25%"/>
-	  <p style="text-align:left;font-size:25px;">Un basso $\mathcal{R}_0$ permette di:</p>
-	  <ul style="font-size:25px; line-height: 40px;">
-	    <li>diminuire il numero totale di morti per il virus e per altre cause</li>
-	    <li>guadagnare tempo per lo sviluppo di un vaccino.</li>
-	  </ul>
-	</section>
 
 
 
