@@ -13,15 +13,17 @@
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code 
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
--->
+		<!-- Theme used for syntax highlighting of code -->
+<!--		<link rel="stylesheet" href="plugin/highlight/monokai.css">-->
 
-<script type="text/x-mathjax-config">
+
+<!--<script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  TeX: { 
+         equationNumbers: { autoNumber: "AMS" }
+         }     
 });
-</script>
+</script>-->
 
 
 	</head>
@@ -99,7 +101,7 @@ MathJax.Hub.Config({
 	  <h5>Macroscopic models</h5>
 	  
 	  \[
-\rho_{t} + \left( f(\rho) \right)_{x} = 0, \quad t>0,\, x \in \mathbb{R},
+\rho_{t} + \left( f(\rho) \right)_{x} = 0, \quad t>0,\, x \in \mathbb{R}
 	  \]
 
 	</section>
@@ -458,25 +460,6 @@ To get a time-depending density with unit mass we set two <i>artificial particle
 x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
 \end{equation}
 
-</p>
-
-	</section>	
-	
-	
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-      <h3>Traffic models</h3>
-
-	  <h6>Follow-The-Leader model: approximating scheme.</h6>
-
-<p style="text-align:left;font-size:25px;">
-
-To get a time-depending density with unit mass we set two <i>artificial particles</i> $x^{n}_{0}(t)$ and $x^{n}_{n}(t)$ for all $t \geq 0$ as:
-
-\begin{equation*}
-x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
-\end{equation*}
-
 and let
 \begin{equation*}
 R^{n}_{0}(t)\ \dot{=}\ R^{n}_{1}(t), \qquad R^{n}_{n}(t)\ \dot{=}\ R^{n}_{n-1}(t).
@@ -485,6 +468,7 @@ R^{n}_{0}(t)\ \dot{=}\ R^{n}_{1}(t), \qquad R^{n}_{n}(t)\ \dot{=}\ R^{n}_{n-1}(t
 </p>
 
 	</section>	
+	
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
@@ -517,11 +501,17 @@ R^{n}_{0}(t)\ \dot{=}\ R^{n}_{1}(t), \qquad R^{n}_{n}(t)\ \dot{=}\ R^{n}_{n-1}(t
 
 $\rho^{n}(t,x)$ has the properties:
 
-\begin{equation*}
-\int_{\mathbb{R}}\rho^{n}(t,x) dx\ = n,\\
-\rho^{n}(t,\cdot) \text{ is compactly supported $\forall\,n,t$},\\
-\|\rho^{n}(t,\cdot)\|_{\mathcal{L}^{\infty}(\mathbb{R})} \leq R\ \dot{=}\ \|\bar{\rho}\|_{\mathcal{L}^{\infty}(\mathbb{R})} \quad \forall t \geq 0.
-\end{equation*}
+  <ul style="text-align:left; font-size:25px;">
+        <li>
+$\int_{\mathbb{R}}\rho^{n}(t,x) dx\ = n,$;
+        </li>
+        <li>
+$\rho^{n}(t,\cdot) \text{ is compactly supported $\forall\,n,t$},$.
+        </li>
+        <li>
+$\|\rho^{n}(t,\cdot)\|_{\mathcal{L}^{\infty}(\mathbb{R})} \leq R\ \dot{=}\ \|\bar{\rho}\|_{\mathcal{L}^{\infty}(\mathbb{R})} \quad \forall t \geq 0.$
+        </li>
+  </ul>
 
 </p>
 
@@ -796,7 +786,7 @@ Once gained strong $\mathcal{L}^{1}$ compactness and by passing from $\left[ \de
 
 <p style="text-align:left;font-size:25px;">
 <b>Step 1: $\rho$ is a weak solution to \eqref{cauchy}.</b>
-Let $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \mathbb{R}_{+} \times \mathbb{R} \right)$ and compute:
+Let $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \mathbb{R}_{+} \times \mathbb{R} \right)$.
 
 \begin{align*}
 
@@ -954,6 +944,7 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 
 
 
+
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
       <h3>Traffic models</h3>
@@ -962,493 +953,604 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 
 <p style="text-align:left;font-size:25px;">
 
-
+\begin{equation}
+    \rho_{t} + \left( u \rho \right)_{x} = 0, \quad t>0,\, x \in \mathbb{R},
+\end{equation}
 
 </p>
     </section>
 
 
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
 
+	  <h6>Numerics</h6>
 
+<p style="text-align:left;font-size:25px;">
 
+Assume the speed limit $u_{max}=1$, and consider:
+
+\begin{equation*}
+  u(\rho) = (1-\rho), \quad f(\rho)= \rho (1 - \rho)
+\end{equation*}
+
+</p>
+
+	  <img src="images/velocity+flux.svg" alt="Velocity u" width="60%""/>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Strategie di controllo</h3>
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
+By using the chain rule we obtain an advection-type equation:
+
+\begin{equation*}
+  \label{eq:trafficflow}
+    \rho_{t} +  \left( 1-2\rho \right) \rho_{x} = 0,
+\end{equation*}
+
+where $f'(\rho) = 1 - 2 \rho$ represents the <i>characteristic speed</i>.
+
+</p>
+
+    </section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+Consider the Riemann problem for the LWR equation
+
+\begin{equation}
+  \label{cauchy:trafficflow}
+\left\{
+    \begin{aligned}
+        & \rho_{t} + \left(f(\rho)\right)_{x} = 0, \quad &&(t,x) \in (0, +\infty) \times \mathbb{R}, \\
+        & \rho(0,x) = \bar{\rho}(x) \quad &&x \in \mathbb{R},
+    \end{aligned}
+\right.
+\end{equation}
+
+equipped with the initial condition:
+\begin{equation}
+  \bar{\rho}(x) =
+  \begin{cases}
+    0.4 & -1 \leq x \leq 0, \\
+    0.8 & 0 < x \leq 1, \\
+    0   & otherwise.
+  \end{cases}
+  \label{rhozero}
+\end{equation}
+
+</p>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Strategie di controllo</h3>
-   	  <p style="font-size:25px;">
-        I principali problemi di controllo riguardano:
-	  </p>
-	  <ul style="font-size:25px;">
-	    <li>minimizzare il numero totale di infetti;</li>
-	    <li>minimizzare la durata dell'epidemia.</li>
-	  </ul>
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
 
+	  <h6>Numerics</h6>
 
+<p style="text-align:left;font-size:25px;">
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-   	  <p style="font-size:25px;">
-    Riscriviamo il sistema SIR nella forma compatta $\dot{\boldsymbol{x}} = f(\boldsymbol{x})$, con $\boldsymbol{x}(t) = (S(t),I(t))^\top$.
-	  </p>
-	</section>
+<b>Traffic jam.</b>
+At $x=0$, traffic approaches a congested area, since $\rho$ is close to $1$.
+This corresponds to the discontinuity (or <i>shock wave</i>) moving to the left.
+
+</p>
+
+	  <img src="images/shock.svg" alt="shock" width="80%""/>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-   	  <p style="font-size:25px;">
-    Riscriviamo il sistema SIR nella forma compatta $\dot{\boldsymbol{x}} = f(\boldsymbol{x})$, con $\boldsymbol{x}(t) = (S(t),I(t))^\top$.
-	  </p>
-   	  <p style="font-size:25px;">
-        Applicando il generico termine di controllo $u(t)$, otteniamo il sistema controllato
-    \[
-    \dot{\boldsymbol{x}}(t) = f(\boldsymbol{x}(t)) + u(t)g(\boldsymbol{x}(t)),
-    \]
-	</p>
-    <p style="line-height: 40px;font-size:25px;">
-    dove $g$ dipende dalla strategia di controllo scelta
-    \[
-    \small g_l(\boldsymbol{x}) =
-    \begin{pmatrix}
-    -\alpha_1 S\\
-    -\alpha_2 I
-    \end{pmatrix}.
-    \]
-	</p>
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+<b>Green light. </b>
+When the light at $x=1$ changes at time $t=0$, there is no traffic after the light. Therefore cars spread out and it appears a <i>rarefaction wave</i>.
+
+</p>
+
+	  <img src="images/rarefaction.svg" alt="rarefaction" width="80%""/>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-   	  <p style="text-align:left;font-size:25px;">
-   	  <b>Definizione</b> (Tempo di eradicazione).
-<i>Il tempo di eradicazione $T$ del problema SIR con controllo è il primo tempo per il quale il numero di infetti raggiunge una certa soglia $\varepsilon < 1$, dove $\varepsilon$ è una costante positiva fissata.</i>
-	  </p>
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+	  <img src="images/recap.svg" alt="traffic scenario" width="100%""/>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-        \[
-        \Tiny
-        \begin{aligned}
-            & \min_{u(t)}
-            & & J(u) = \int_{0}^{T}1dt \quad \text{(Tempo di eradicazione)}\\
-            & \text{ t.c.}
-            & & \dot{\boldsymbol{x}}(t) =
-            f(\boldsymbol{x}(t)) + u(t)g(\boldsymbol{x}(t)),\quad t \geq 0;\\
-            &&& \boldsymbol{x}(0) = \boldsymbol{x}_0,\quad
-            \boldsymbol{x}(T) \in \mathcal{C} =
-            \left\{(S,I) : I = \varepsilon \right\}\\
-            &&& u : [0,+\infty) \rightarrow U = [0,u^{max}]~\text{continua a tratti}.
-        \end{aligned}
-        \]
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+Consider the Riemann problem for the LWR equation by considering the initial datum $\bar{\rho}$ as:
+
+\begin{equation}
+  \label{rhozero2}
+  \bar{\rho}(x) =
+  \begin{cases}
+    0.\bar{3} & -1 \leq x \leq 0, \\
+    0.\bar{6} & 0 < x \leq 1, \\
+    0   & \text{otherwise}.
+  \end{cases}
+\end{equation}
+
+</p>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-   	  <p style="text-align:left; font-size:25px;">
-   	  <b>Teorema</b>.
-<i>Se $u_{l}^{*}$ è il termine lineare che rappresenta la strategia ottima per il problema di controllo, allora $u_{l}^{*}$ è un controllo <b>bang-bang</b> con un solo tempo di commutazione $\tau_{s}^{*}$, da nessun controllo a massimo controllo.</i>
-	  </p>
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+
+	  <h6>Numerics</h6>
+
+<p style="text-align:left;font-size:25px;">
+
+Evolution of $\rho^{n}$ with initial datum \eqref{rhozero2}.
+We take $N = 400$, final time $T = 0.5$ and $(L,v_0) = (0.0025,1)$.
+
+</p>
+
+	  <img src="images/linvsexact.svg" alt="Linear vs Exact" width="100%""/>
+
+    </section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Controllo ottimo tempo ottimale</h3>
-   	  <p style="text-align:left; font-size:25px;">
-   	  <b>Teorema</b>.
-<i>Se $u_{l}^{*}$ è il termine lineare che rappresenta la strategia ottima per il problema di controllo, allora $u_{l}^{*}$ è un controllo <b>bang-bang</b> con un solo tempo di commutazione $\tau_{s}^{*}$, da nessun controllo a massimo controllo.</i>
-	  </p>
-        \[
-        \Tiny
-        \begin{aligned}
-            \mathcal{A} =
-            \Bigl\{
-            & u :[0,+\infty) \rightarrow \left\{0,u^{max}\right\}~
-            \text{costante a tratti con al massimo} \\[10pt]
-            & \text{un salto da 0 a } u^{max},
-            ~\lim_{t \to +\infty} u(t) = u^{max}
-            \Bigr\}.
-        \end{aligned}
-        \]
-	</section>
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
 
+	  <h6>Numerics</h6>
 
+	  <img src="images/velocity+flux_lin.svg" alt="vel lin" width="60%""/>
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Vaccinazione</h3>
-   	  <p style="text-align:left; font-size:25px;">
-        Il termine lineare per questa politica di controllo è
-        \[
-        \alpha_1 = 1,~\alpha_2 = 0:
-        \quad g_v(\boldsymbol{x}) =
-        \begin{pmatrix}
-        - S\\
-        0
-        \end{pmatrix}
-        \]
-      <p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Vaccinazione</h3>
-       	  <p style="text-align:left; font-size:25px;">
-            Il termine lineare per questa politica di controllo è
-            \[
-            \alpha_1 = 1,~\alpha_2 = 0:
-            \quad g_v(\boldsymbol{x}) =
-            \begin{pmatrix}
-            - S\\
-            0
-            \end{pmatrix}
-            \]
-          <p>
-        <p style="text-align:left; font-size:25px;">
-            e otteniamo il sistema seguente
-            \[
-            \left\{
-                \begin{alignedat}{2}
-                    \dot{S}(t) & = -\beta S(t)I(t) - u_{v}(t)S(t) \\
-                    \dot{I}(t) & = \beta S(t)I(t) {} - {} \gamma I(t) \\
-                \end{alignedat}
-            \right.
-            \]
-            con $u_{v}(t) \in \mathcal{A}$ termine di controllo per la politica  di vaccinazione.
-        </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Vaccinazione</h3>
-        <p style="text-align:left; font-size:25px;">
-            e otteniamo il sistema seguente
-            \[
-            \left\{
-                \begin{alignedat}{2}
-                    \dot{S}(t) & = -\beta S(t)I(t) - u_{v}(t)S(t) \\
-                    \dot{I}(t) & = \beta S(t)I(t) {} - {} \gamma I(t) \\
-                \end{alignedat}
-            \right.
-            \]
-            con $u_{v}(t) \in \mathcal{A}$ termine di controllo per la politica  di vaccinazione.
-        </p>
-   	  <p style="text-align:left;line-height: 40px; font-size:25px;">
-   	  <b>Teorema</b>.
-        <i>Il tempo di commutazione $\tau_{s}^{*}$ può verificarsi solamente prima del picco delle infezioni.</i>
-	  </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Isolamento degli infetti</h3>
-   	  <p style="text-align:left; font-size:25px;">
-        Il termine lineare per questa politica di controllo è
-        \[
-        \alpha_1 = 0,~\alpha_2 = 1: \quad g_i(\boldsymbol{x}) =
-        \begin{pmatrix}
-        0\\
-        - I
-        \end{pmatrix}
-        \]
-      <p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Isolamento degli infetti</h3>
-   	  <p style="text-align:left; font-size:25px;">
-        Il termine lineare per questa politica di controllo è
-        \[
-        \alpha_1 = 0,~\alpha_2 = 1: \quad g_i(\boldsymbol{x}) =
-        \begin{pmatrix}
-        0\\
-        - I
-        \end{pmatrix}
-        \]
-      <p>
-        <p style="text-align:left; font-size:25px;">
-            e otteniamo il sistema seguente
-            \[
-            \left\{
-            \begin{aligned}
-                \dot{S}(t) & = -\beta S(t)I(t) \\
-                \dot{I}(t) & = \beta S(t)I(t) {} - {} \gamma I(t) - u_{i}(t)I(t)\\
-            \end{aligned}
-            \right.
-            \]
-            con $u_{i}(t) \in \mathcal{A}$ termine di controllo nel caso dell'isolamento.
-        </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Isolamento degli infetti</h3>
-        <p style="text-align:left; font-size:25px;">
-            e otteniamo il sistema seguente
-            \[
-            \left\{
-            \begin{aligned}
-                \dot{S}(t) & = -\beta S(t)I(t) \\
-                \dot{I}(t) & = \beta S(t)I(t) {} - {} \gamma I(t) - u_{i}(t)I(t)\\
-            \end{aligned}
-            \right.
-            \]
-            con $u_{i}(t) \in \mathcal{A}$ termine di controllo nel caso dell'isolamento.
-        </p>
-   	  <p style="text-align:left;line-height: 40px; font-size:25px;">
-   	  <b>Teorema</b>.
-        <i>Il tempo di commutazione $\tau_{s}^{*}$ può verificarsi dopo il picco delle infezioni e non necessariamente prima. Ritardare il controllo è strategia ottima anche quando il numero di infetti aumenta, ovvero per $\dot{I}(t)>0$.</i>
-	  </p>
-	</section>
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-
-	  <h3>Strategie a confronto</h3>
-
-	  <table style="width:65%; font-size:25px;">
-
-      <caption align="top">
-          Vaccinazione a sinistra, Isolamento degli infetti a destra.
-      </caption>
-
-	    <tr>
-	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/vaccinazione/subplot1.svg"
-			 alt="modello sir" />
-	      </td>
-
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/isolamento/subplot1.svg"
-			 alt="modello sir" />
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/vaccinazione/subplot3.svg"
-			 alt="modello sir"/>
-	      </td>
-
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/isolamento/subplot3.svg"
-			 alt="modello sir" />
-	      </td>
-	    </tr>
-
-	  </table>
-
-	</section>
-
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h4>Controllo istantaneo mediante lockdown</h4>
-        <p style="text-align:left; font-size:25px;">
     </section>
 
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h4>Controllo istantaneo mediante lockdown</h4>
-        <p style="text-align:left; font-size:25px;">
-        Il generico sistema controllato
-            \[
-            \left\{
-            \begin{aligned}
-                \dot{S}(t) & = -(\beta_0 + u(t)) S(t)I(t) \\
-                \dot{I}(t) & = (\beta_0 + u(t)) S(t)I(t) {} - {} \gamma I(t) \\
-            \end{aligned}
-        \right.
-            \]
-        e l'insieme dei controlli ammissibili è
-            \[
-            \begin{aligned}
-                \mathcal{A} =
-                \Bigl\{
-                u :[0,+\infty) \rightarrow [-\beta_0,0]
-                \text{ tali che } \beta_0 + u(t) \geq 0
-                \Bigr\}.
-            \end{aligned}
-            \]
-        </p>
-	</section>
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h4>Controllo istantaneo mediante lockdown</h4>
-        <p style="font-size:25px;">
-        \[
-        \begin{aligned}
-            & \min_{u(t)}
-            & & J(u(t);S_0,I_0) =
-                \int_{t}^{t+\Delta t}\lvert I(t) \rvert + \frac{\eta}{2}\,
-                \lvert u(t) \rvert^{2}dt\\
-            & \text{ t.c. }
-            & & \dot{\boldsymbol{x}}(t) = f(\boldsymbol{x}(t)),\quad t \geq 0;\\
-            & & & u(t) \in \mathcal{A};
-        \end{aligned}
-        \]
-        </p>
-	</section>
+
+
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="Honeydew">
-	  <h3>Modello $\kappa$-SIR</h3>
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \left\{
-        \begin{aligned}
-            \dot{S}(t) & =
-            -\biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) \\[4pt]
-            \dot{I}(t) & =
-            \biggl(\beta_0 - \frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) - \gamma I(t)
-        \end{aligned}
-        \right.
-        \]
-        </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Modello $\kappa$-SIR</h3>
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \left\{
-        \begin{aligned}
-            \dot{S}(t) & =
-            -\biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) \\[4pt]
-            \dot{I}(t) & =
-            \biggl(\beta_0 - \frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) - \gamma I(t)
-        \end{aligned}
-        \right.
-        \]
-        </p>
-        <p style="text-align:left; font-size:25px;">
-        L'ammissibilità del controllo $u(t) \in \mathcal{A}$ è legata alla seguente condizione non lineare
-        \[
-        \beta(t) \geq 0 \iff \kappa \geq \frac{S(t)I(t)}{\beta_0}.
-        \]
-        </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Modello $\kappa$-SEIR</h3>
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \left\{
-        \begin{aligned}
-            \dot{S}(t) & =
-            -\biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) \\[4pt]
-            \dot{E}(t) & =
-            \biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) - \mu E(t)\\[4pt]
-            \dot{I}(t) & = \mu E(t) - \gamma I(t)
-        \end{aligned}
-        \right.
-        \]
-        </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Honeydew">
-	  <h3>Modello $\kappa$-SEIR</h3>
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \left\{
-        \begin{aligned}
-            \dot{S}(t) & =
-            -\biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) \\[4pt]
-            \dot{E}(t) & =
-            \biggl(\beta_0 -\frac{S(t)I(t)}{\kappa}\biggr) S(t)I(t) - \mu E(t)\\[4pt]
-            \dot{I}(t) & = \mu E(t) - \gamma I(t)
-        \end{aligned}
-        \right.
-        \]
-        </p>
-        <p style="text-align:left; font-size:25px;">
-        L'ammissibilità del controllo $u(t) \in \mathcal{A}$ è legata alla seguente condizione non lineare
-        \[
-        \beta(t) \geq 0 \iff \kappa \geq \frac{S(t)I(t)}{\beta_0}.
-        \]
-        </p>
+	  <h3>Model Calibration with Data</h3>
 	</section>
 
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	</section>
 
-	  <h3>Modelli a confronto</h3>
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	  
+<p style="text-align:left;font-size:25px;">
 
-	  <table style="width:65%; font-size:25px;">
+Let $u$ represent the control variables and $z$ denote the reference dataset.
 
-      <caption align="top">
-          $\kappa$-SIR a sinistra, $\kappa$-SEIR a destra.
-      </caption>
+\begin{equation*}
+  \min_{u\, \in\, \mathcal{U}} J \left( x(u); z \right),
+\end{equation*}
+
+where $\mathcal{U} = \mathbb{R}^{K}$ denotes the space of controls.
+
+</p>	  
+	  
+	</section>
+	
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	  
+<p style="text-align:left;font-size:25px;">
+
+Consider $N$ agents with corresponding trajectories $ z_{i} : \left[ 0, T \right] \rightarrow \mathbb{R}^{d}\ \text{for}\; i  = 1,... , N$. Then, we obtain the trajectories $ x_{i}^{u} : \left[ 0, T \right] \rightarrow \mathbb{R}^{d}\ \text{for}\; i  = 1,... , N$.
+
+<br>
+<br>
+
+Focus on the cost functional:
+\begin{equation*}
+  J \left( x(u);z \right)
+  \, =\, \dfrac{1}{2} \int_{0}^{T} \| z(t) - x(t) \|^{2} dt
+  \, =\, \dfrac{1}{2} \| z(t) - x(t) \|^{2}_{\mathcal{L}^{2}(\mathbb{R})}.
+\end{equation*}
+
+<br>
+
+\begin{equation} \label{x:dyn}
+
+\frac{ d }{ dt } x_{i}
+  \, =\, \sum_{j = 1}^{N} W_{u}^{i,j} (x_{j} - x_{i}), \quad x_{i}(0) = z_{0}^{i}, \qquad i = 1, ..., N,
+\end{equation}
+where $W_{u}^{i,j}$ models the interaction of the agents and is the output of a neural network parameterized by $u$.
+
+</p>	  
+	  
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	  
+<p style="text-align:left;font-size:25px;">
+
+he optimal control problem proposed for parameter identification can be expressed as:
+
+<br>
+<br>
+
+<b>Problem 1</b> .
+<i>
+  Find $\bar{u} \in \mathcal{U}_{ad} := \left[ -1, 1 \right]^{K}$ such that
+  \begin{equation*}
+    J \left( x(u);z \right)
+    \, =\, \min_{u\, \in\, \mathcal{U}} J \left( x(u); z \right) \quad \text{subject to \eqref{x:dyn}}.
+  \end{equation*}
+</i>
+
+</p>  
+	  
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	  
+<p style="text-align:left;font-size:25px;">
+
+<b>Definition 3</b>.
+  A <i>Feed-Forward Artificial Neural Network (NN) </i> is characterized by the structure:
+</p>
+   <ul style="text-align:left; font-size:20px;">
+        <li>
+Input layer:
+<br>
+    \begin{equation*}
+a_{k}^{(1)} = x_{k}, \qquad \text{for}\ k \in \{ 1,... , n^{(1)} + 1 \},
+    \end{equation*}
+<!--where $x \in \mathbb{R}^{n^{(1)}}$ is the input and $n^{(1)}$ is the number of neurons in the input layer.-->
+        </li>
+        <li>
+Hidden layers:
+    \begin{equation*}
+      a_{k}^{(\ell)} = g^{(\ell)} \Bigg( \sum_{j=1}^{n^{(\ell - 1) + 1}} u_{j,k}^{(\ell - 1)} a_{j}^{(\ell-1)} \Bigg),
+      \qquad \text{for $k \in \left\{ 1,... , n^{(\ell)} + 1 \right\}$, 
+        for $\ell \in \left\{ 2,... , L-1 \right\}$,}
+    \end{equation*}
+        </li>
+        <li>
+Output layer:
+    \begin{equation*}
+      a_{k}^{(L)} = g^{(L)} \Bigg( \sum_{j=1}^{n^{(L - 1) + 1}} u_{j,k}^{(L - 1)} a_{j}^{(L-1)} \Bigg),
+      \qquad \text{for $k \in \left\{ 1,... , n^{(L)}\right\}$}
+    \end{equation*}
+        </li>
+  </ul>
+</i>
+	  
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Optimal Control framework</h5>
+	  
+<p style="text-align:left;font-size:25px;">
+
+We consider $g^{(\ell)}(x) = \text{log} \left( 1 + e^{x} \right)$ for $\ell = 2,..., N-1$ and $g^{(L)}(x) = x$.
+</p>
+
+	  <img src="images/nn.svg" alt="ANN" width="50%""/>
+	  
+	</section>
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+<b>Traffic dynamic with LWR-model</b>
+	  
+<p style="text-align:left;font-size:25px;">
+
+Let $x_{i}(t)$ denote the position of the $i$-th car at time $t \in \left[ 0, T\right]$. Then:
+</p>
+
+<p style="text-align:left;font-size:20px;">
+\begin{equation} \label{td:lwr}
+\left\{
+    \begin{aligned}
+      & \dot{x}_{i}(t)\, =\, W_{u}^{i,i+1}\, \bigg( \dfrac{ x_{i+1}(t) - x_{i}(t)}{L} \bigg),
+        \quad i \in 1,... , N-1, \\
+      & \dot{x}_{N}(t)\, =\, v_{0},
+    \end{aligned}
+\right.
+\end{equation}
+
+</p>
+
+<p style="text-align:left;font-size:25px;">
+where $v_{0}$ is the velocity of the leading car and $L$ the length of the cars.
+For $z > 0$, we model the velocity function as:
+
+</p>
+
+   <ul style="text-align:left; font-size:20px;">
+        <li>
+$ W_{u}^{i,i+1} (z) = v_{0}\, \text{log}(z)$ for the logarithmic case;
+        </li>
+        <li>
+$ W_{u}^{i,i+1} (z) = v_{0} \left(1 - \dfrac{1}{z} \right)$ for the linear case.
+        </li>
+  </ul>
+
+<!--<p style="text-align:left;font-size:25px;">
+
+  The task of the  parameter identification is to estimate $u = \left( L, v_{0} \right) \in \mathbb{R}^{2}$.
+
+</p>-->
+
+	</section>
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+<b>Traffic dynamic with artificial neural network</b>
+	  
+<p style="text-align:left;font-size:25px;">
+
+We parameterize the interactions of the follower–leader dynamic using $W_{u}$:
+ 
+</p>
+
+<p style="text-align:left;font-size:20px;">
+
+\begin{equation} \label{td:ann}
+\left\{
+    \begin{aligned}
+      & \dot{x}_{i}(t)\, =\, W_{u}^{i,i+1}\, \big( x_{i+1}(t) - x_{i}(t) \big),
+        \quad i \in 1,... , N-1, \\[1ex]
+      & \dot{x}_{N}(t)\, =\, v_{0}.
+    \end{aligned}
+\right.
+\end{equation}
+
+</p>
+
+<p style="text-align:left;font-size:25px;">
+
+with initial data $x(0) = x_{0}$ and $u = \left(v_0, u_{Net}\right)$.
+
+</p>
+
+<!--<p style="text-align:left;font-size:25px;">
+
+  The task of the  parameter identification is to estimate $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$.
+
+</p>
+-->
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+<p style="text-align:left;font-size:25px;">
+
+  The task of the  parameter identification is to estimate:
+
+</p>
+
+   <ul style="text-align:left; font-size:20px;">
+        <li>
+$u = \left( L, v_{0} \right) \in \mathbb{R}^{2}$ in the LWR traffic model
+        </li>
+        <li>
+$u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural network-driven traffic model
+        </li>
+  </ul>
+
+  
+     <p style="font-size:25px; text-align:left;"
+        class="fragment">
+     <img src="images/esimas.png"
+         alt="ESIMAS"
+         width="42"
+         height="42"
+         style="vertical-align:middle"> Real data provided by the <a href="https://github.com/ctotzeck/NN-interaction">ESIMAS project</a>.
+     </p>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+	  <img src="images/alg1.svg" alt="Pseuso Alg 1" width="80%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+	  <img src="images/alg2.svg" alt="Pseuso Alg 2" width="80%""/>
+
+	</section>
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Data-driven parameter estimation</h5>
+
+	  <img src="images/alg3.svg" alt="Pseuso Alg 3" width="80%""/>
+
+	</section>
+
+
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <img src="images/v0_NN10.svg" alt="v0 NN10" width="50%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <img src="images/v0_plot.svg" alt="v0 all" width="50%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <img src="images/tabella.svg" alt="v0 all" width="80%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <img src="images/velocity+flux_nn.svg" alt="NN velocity" width="60%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <img src="images/nnvslin.svg" alt="NN vs LIN" width="100%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Honeydew">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+	  <table style="width:100%; font-size:20px;">
 
 	    <tr>
 	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/ksir/subplot1.svg"
-			 alt="modello sir" />
+		<img
+			 src="images/contour_lin.svg"
+			 alt="contour LIN" />
 	      </td>
 
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/kseir/subplot1.svg"
-			 alt="modello sir" />
-	      </td>
-	    </tr>
-
-	    <tr>
 	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/ksir/subplot3.svg"
-			 alt="modello sir"/>
-	      </td>
-
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/kseir/subplot3.svg"
-			 alt="modello sir" />
+		<img
+			 src="images/contour_nn.svg"
+			 alt="contour NN" />
 	      </td>
 	    </tr>
 
@@ -1461,7 +1563,7 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
+<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="Azure">
 	  <h3>Stima e calibrazione dei parametri</h3>
 	  <ul style="font-size:25px; line-height: 40px; ">
@@ -1477,414 +1579,7 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
          height="42"
          style="vertical-align:middle"> Dati forniti dal <a href="https://github.com/pcm-dpc/COVID-19">Dipartimento della Protezione Civile</a>.
      </p>
-	</section>
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  
-	  <ul style="font-size:25px; line-height: 40px; ">
-        <li>stima dei parametri epidemiologici $\beta$ e $\gamma$ nella fase precedente al lockdown;</li>
-	  </ul>
-
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \min_{\beta,\gamma}\;
-        \biggl(
-        \int_{t_0}^{t_u} \phi\lvert I(t) -\hat{I}(t) \rvert^{2} +
-        \psi\lvert R(t) -\hat{R}(t) \rvert^{2} dt
-        \biggr)^{1/2}
-        \]
-        </p>
-
-		
-        <p style="text-align:left; font-size:25px;"
-           class="fragment">
-        sotto i vincoli $\beta \geq 0$ e $\gamma \geq 0$
-        </p>
-
-
-        <p style="text-align:left; font-size:25px;"
-           class="fragment">
-        con $\phi,\psi \geq 0$&nbsp;&nbsp;tali che&nbsp;&nbsp;$\phi+\psi=1$
-        </p>
-
-</section>
-
-    
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  
-	  <ul style="font-size:25px; line-height: 40px; ">
-        <li>stima dei parametri epidemiologici $\beta$ e $\gamma$ nella fase precedente al lockdown;</li>
-	  </ul>
-
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \min_{\beta,\gamma}\;
-        \biggl(
-        \int_{t_0}^{t_u} \phi\lvert I(t) -\hat{I}(t) \rvert^{2} +
-        \psi\lvert R(t) -\hat{R}(t) \rvert^{2} dt
-        \biggr)^{1/2}
-        \]
-        </p>
-
-        <table style="width:65%; font-size:25px;">
-
-        <caption align="bottom">
-          <br>
-          Utilizzando $\phi=0.5$&nbsp;e&nbsp;$\psi=0.5$.
-        </caption>
-
-        <thead>
-          <tr>
-            <th></th>
-            <th>Italia</th>
-            <th>Lombardia</th>
-            <th>Veneto</th>
-            <th>Emilia-Romagna</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\beta$</td>
-            <td style="text-align:center;">0.3088</td>
-            <td style="text-align:center;">0.2923</td>
-            <td style="text-align:center;">0.2457</td>
-            <td style="text-align:center;">0.3410</td>
-          </tr>
-          <tr>
-            <td>$\gamma$</td>
-            <td style="text-align:center;">0.0495</td>
-            <td style="text-align:center;">0.0578</td>
-            <td style="text-align:center;">0.0165</td>
-            <td style="text-align:center;">0.0242</td>
-          </tr>
-          <tr>
-            <td>$\mathcal{R}_0$</td>
-            <td style="text-align:center;">6.2352</td>
-            <td style="text-align:center;">5.0549</td>
-            <td style="text-align:center;">14.8884</td>
-            <td style="text-align:center;">14.0619<br></td>
-          </tr>
-        </tbody>
-        </table>
-
-	</section>
-	
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  
-	  <ul style="font-size:25px; line-height: 40px; ">
-        <li>stima dei parametri epidemiologici $\beta$ e $\gamma$ nella fase precedente al lockdown;</li>
-	  </ul>
-
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \min_{\beta,\gamma}\;
-        \biggl(
-        \int_{t_0}^{t_u}
-        \phi(t)\lvert I(t) -\hat{I}(t) \rvert^{2} +
-        \psi(t)\lvert R(t) -\hat{R}(t) \rvert^{2} dt
-        \biggr)^{1/2} - \lambda(\beta,\gamma)
-        \]
-        </p>
-
-
-        <p style="text-align:left; font-size:25px;"
-        class = "fragment">
-        \[
-        \phi(t) = a_{\phi} \cdot A \cdot \frac{1}{1+e^{-c (t - t_0)}}, \quad
-        \psi(t) = a_{\psi} \cdot A \cdot \frac{1}{1+e^{-c (t - t_0)}}
-        \]
-        </p>
-
-</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  
-	  <ul style="font-size:25px; line-height: 40px; ">
-        <li>stima dei parametri epidemiologici $\beta$ e $\gamma$ nella fase precedente al lockdown;</li>
-	  </ul>
-
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \min_{\beta,\gamma}\;
-        \biggl(
-        \int_{t_0}^{t_u}
-        \phi(t)\lvert I(t) -\hat{I}(t) \rvert^{2} +
-        \psi(t)\lvert R(t) -\hat{R}(t) \rvert^{2} dt
-        \biggr)^{1/2} - \lambda(\beta,\gamma)
-        \]
-        </p>
-
-    <table style="width:65%; font-size:25px;">
-
-      <caption align="bottom">
-          <br>
-          Utilizzando $\lambda(\beta,\gamma) = \nu \cdot \gamma^{1/2}$, con $\nu=0.001$.
-      </caption>
-
-        <thead>
-          <tr>
-            <th></th>
-            <th>Italia</th>
-            <th>Lombardia</th>
-            <th>Veneto</th>
-            <th>Emilia-Romagna</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$\beta$</td>
-            <td style="text-align:center;">0.3084</td>
-            <td style="text-align:center;">0.2926</td>
-            <td style="text-align:center;">0.2446</td>
-            <td style="text-align:center;">0.3408</td>
-          </tr>
-          <tr>
-            <td>$\gamma$</td>
-            <td style="text-align:center;">0.0498</td>
-            <td style="text-align:center;">0.0585</td>
-            <td style="text-align:center;">0.0176</td>
-            <td style="text-align:center;">0.0253</td>
-          </tr>
-          <tr>
-            <td>$\mathcal{R}_0$</td>
-            <td style="text-align:center;">6.1888</td>
-            <td style="text-align:center;">4.9984</td>
-            <td style="text-align:center;">13.896</td>
-            <td style="text-align:center;">13.472<br></td>
-          </tr>
-        </tbody>
-    </table>
-
-	</section>
-
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  <ul style="font-size:25px; line-height: 40px; ">
-        <li>stima dei parametri epidemiologici $\beta$ e $\gamma$ nella fase precedente al lockdown;</li>
-	  </ul>
-
-	  <img
-	  src="immagini/italia/prelock.svg" alt="sim prelock"
-	  width="50%"/>
-	</section>
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  <ul style="font-size:25px; line-height: 40px;">
-	    <li style="text-align:left">stima del parametro di controllo $\kappa$ del modello $\kappa$-SIR.</li>
-	  </ul>
-
-        <p style="text-align:left; font-size:25px;">
-        \[
-        \min_{\kappa(t_i)}\;
-        \biggl(
-        \int_{t_i - k_{l}h}^{t_i + k_{r}h} \phi\lvert I(t) -\hat{I}(t) \rvert^{2} + \psi\lvert R(t) -\hat{R}(t) \rvert^{2} dt
-        \biggr)^{1/2}
-        \]
-        </p>
-
-
-    <p style="text-align:left; font-size:25px;"
-       class="fragment">
-       con i vincoli&nbsp;&nbsp;$\kappa(t_i)>0$,&nbsp;&nbsp;$k_l$,&nbsp;$k_r \geq 1$ interi e utilizzando $\beta$ e $\gamma$ ottenuti in precedenza;
-    </p>
-
-    <p style="text-align:left; font-size:25px;"
-       class="fragment">
-       Regressione non lineare con $\kappa(t)=a \cdot e^{-bt} \cdot \big( e^{1-ct} \big)^{3}$.
-    </p>
-
-	</section>
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima e calibrazione dei parametri</h3>
-	  <ul style="font-size:25px; line-height: 40px;">
-	    <li>stima del parametro di controllo $\kappa$ del modello $\kappa$-SIR.</li>
-	  </ul>
-
-	  <img
-	  src="immagini/italia/riep_exp.svg" alt="sim lock"
-	  width="50%"/>
-
-	</section>
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Confronto SIR e SEIR</h3>
-
-	      <table style="width:60%; font-size:25px;"
-	      class="fragment fade-up">
-
-
-      <caption align="bottom">
-          <br>
-          Utilizzando $\lambda(\beta,\gamma) =  \nu \cdot (\beta^2 + \mu^2)$, con $\nu=1$.
-      </caption>
-
-        <thead>
-          <tr>
-            <th></th>
-            <th style="text-align:center;">$\beta$</th>
-            <th style="text-align:center;">$\gamma$</th>
-            <th style="text-align:center;">$\mu$</th>
-            <th style="text-align:center;">$\mathcal{R}_0$</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Italia</td>
-            <td style="text-align:center;">0.4377</td>
-            <td style="text-align:center;">0.0807</td>
-            <td style="text-align:center;">0.3500</td>
-            <td style="text-align:center;">5.4257</td>
-          </tr>
-        </tbody>
-    </table>
-
-	</section>
-
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Confronto SIR e SEIR</h3>
-
-	  <table style="width:100%; font-size:25px;">
-
-      <caption align="top">
-          $\kappa$-SIR a sinistra, $\kappa$-SEIR a destra.
-      </caption>
-
-	    <tr>
-	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/italia/riep_exp.svg"
-			 alt="riepilogo sir exp" />
-	      </td>
-
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/kseir/riep_exp.svg"
-			 alt="riepilogo seir exp" />
-	      </td>
-	    </tr>
-
-	  </table>
-
-	</section>
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima dell'andamento effettivo di infezione con dati incerti</h3>
-	</section>
-
-
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima dell'andamento effettivo di infezione con dati incerti</h3>
-
-        <p style="text-align:left; font-size:25px;">
-    Consideriamo la variabile casuale $\boldsymbol{z}=(z_{1}, z_{2})$ con componenti indipendenti tale che
-        \[
-	    I(\boldsymbol{z},0) = I_0(1 + \mu z_{1}), \quad
-        R(\boldsymbol{z},0) = R_0(1 + \mu z_{1}),
-        \]
-        \[
-        \beta(\boldsymbol{z}) = \beta_{e} + \alpha_{\beta} z_{2}, \quad
-        \gamma(\boldsymbol{z}) = \gamma_{e} + \alpha_{\gamma} z_{2}.
-        \]
-    </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima dell'andamento effettivo di infezione con dati incerti</h3>
-    <p style="text-align:left; font-size:25px; line-height: 50px;">
-    \[
-    \left\{
-    \begin{aligned}
-        \dot{S}(\boldsymbol{z},t) & =
-        -\biggl(
-        \beta_0 -\frac{S_{r}(t) I_{r}(t)}{\kappa(t)}
-        \biggr) S(\boldsymbol{z},t)
-        I(\boldsymbol{z},t) \\[2pt]
-        \dot{I}(\boldsymbol{z},t) & =
-        \biggl(
-        \beta_0 - \frac{S_{r}(t) I_{r}(t)}{\kappa(t)}
-        \biggr) S(\boldsymbol{z},t)I(\boldsymbol{z},t)
-        - \gamma I(\boldsymbol{z},t)
-    \end{aligned}
-    \right.
-    \]
-    </p>
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Stima dell'andamento effettivo di infezione con dati incerti</h3>
-
-	  <table style="width:100%; font-size:20px;">
-
-      <caption align="top">
-          Casi attuali attesi a sinistra, casi totali attesi a destra.<br>
-          Simulazione con $z_1 \sim B(2,2),&nbsp;&nbsp;z_2 \sim B(10,10),&nbsp;&nbsp; \alpha_{\beta}=0.05$ e $\alpha_{\gamma}=0$.
-      </caption>
-
-	    <tr>
-	      <td style="width:50%; border-bottom:0px;">
-		<img class="fragment fade-right"
-			 src="immagini/italia/riepilogoStat Jun 30.svg"
-			 alt="casi attuali attesi" />
-	      </td>
-
-	      <td style="border-bottom:0px;">
-		<img class="fragment fade-left"
-			 src="immagini/italia/CTriepilogoStat Jun 30.svg"
-			 alt="casi totali attesi" />
-	      </td>
-	    </tr>
-
-	  </table>
-
-	</section>
+	</section>-->
 
 
 
@@ -1892,31 +1587,30 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="AliceBlue">
-	  <h3>Conclusioni e sviluppi futuri</h3>
+	  <h3>Conclusions and Future Developments</h3>
 
     <p style="text-align:left; font-size:25px;">
-        Gli obiettivi di questo studio sono stati:
+    The aims of this study were:
     </p>
 
 	  <ul style="font-size:25px; line-height: 40px;">
-	    <li class="fragment">lo sviluppo di un modello compartimentale con controllo feedback per lo studio della diffusione dell'epidemia COVID-19 in Italia;</li>
-	    <li class="fragment">l'analisi del problema relativo all'affidabilità dei dati disponibili.</li>
+	    <li class="fragment">Analysis of the connection between microscopic and macroscopic modeling, outlining the necessary conditions for the discrete-to-continuum transition in traffic models;</li>
+	    <li class="fragment">Application of Neural Network-driven models to describe traffic dynamics scenarios.</li>
 	  </ul>
 	</section>
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="AliceBlue">
-	  <h3>Conclusioni e sviluppi futuri</h3>
+	  <h3>Conclusions and Future Developments</h3>
         <p style="text-align:left; font-size:25px;">
-	  Gli sviluppi immediati di questo lavoro possono riguardare:
+Immediate developments of this work may involve:
     </p>
-    
-	  <ul style="font-size:25px; line-height: 40px;">
-	    <li class="fragment">la modelizzazione del parametro $\beta$;</li>
-	    <li class="fragment">l'introduzione di stocasticità;</li>
-	    <li class="fragment">l'inclusione dei casi asintomatici.</li>
-	  </ul>
+
+  <ul style="font-size:25px; line-height: 40px;">
+    <li class="fragment">Incorporating physics into Neural Networks using <i>Physics-Informed Neural Networks (PINNs)</i>;</li>
+    <li class="fragment">Enhancing Neural Network architecture with <i>Recurrent Neural Networks (RNNs)</i>.</li>
+  </ul>
 
 	</section>
 
@@ -1929,9 +1623,8 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 		<script src="dist/reveal.js"></script>
 	<!--	<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
 -->
-    <script src="plugin/math/math.js"></script>
+        <script src="plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -1945,6 +1638,7 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 	      mathjax: 'mathjax/MathJax.js',
 	      config: 'TeX-AMS_HTML-full',
 	      TeX: {
+	      equationNumbers: { autoNumber: "AMS" },
 		  Macros: {
 		      R: '\\mathbb{R}',
 		      set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
@@ -1952,8 +1646,8 @@ for all $\varphi \in \text{C}^{\infty}_{\text{c}} \left( \left( 0, +\infty \righ
 	      }
 	  },
 				// Learn about plugins: https://revealjs.com/plugins/
-    	plugins: [ RevealMath ]
-			});
+    	plugins: [ RevealMath ],  
+		});
 		</script>
 	</body>
 </html>
