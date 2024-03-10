@@ -56,12 +56,12 @@ MathJax.Hub.Config({
 
 	<section data-auto-animate data-auto-animate-unmatched="fade">
 	  <h3>Introduction</h3>
-	  <p style="font-size:25px;">
-        Our aim is to study interaction dynamics and model them using data-driven techniques in a traffic context.
-        The emphasis of this thesis is on:
+	  <p style="text-align:left; font-size:25px;">
+We aim to analyze interaction dynamics using data-driven techniques.
+        The emphasis is on:
 	  </p>
-	  <ul style="font-size:25px;">
-	    <li>Discrete-to-continuum transition in traffic modelling.</li>
+	  	  <ul style="font-size:25px; line-height: 40px;">
+	    <li>Discrete-to-continuum transition in traffic modelling;</li>
 	    <li>Neural networks for modelling interactions with data.</li>
 	  </ul>
 	</section>
@@ -81,7 +81,7 @@ MathJax.Hub.Config({
 	  <p style="text-align:left; font-size:25px;">
 	    Our focus lies in uncovering the underlying connection in traffic modelling between:
 	  </p>
-	  <ul style="font-size:25px;">
+	  	  <ul style="font-size:25px; line-height: 40px;">
 	    <li><b><i>Macroscopic models</i></b>, as the <i>Lighthill–Whitham–Richards (LWR) model</i>;</li>
 	    <li><b><i>Microscopic models</i></b>, as the <i>Follow-The-Leader</i>-type <i>(FTL)</i> models.</li>
 	  </ul>
@@ -99,10 +99,14 @@ MathJax.Hub.Config({
 	data-background="LightYellow">
       <h3>Traffic models</h3>
 	  <h5>Macroscopic models</h5>
-	  
-	  \[
+
+	  <p style="text-align:left; font-size:25px;">
+
+\begin{equation*}
 \rho_{t} + \left( f(\rho) \right)_{x} = 0, \quad t>0,\, x \in \mathbb{R}
-	  \]
+\end{equation*}
+
+	  </p>
 
 	</section>
 
@@ -118,17 +122,19 @@ MathJax.Hub.Config({
 	data-background="LightYellow">
       <h3>Traffic models</h3>
 	  <h5>Microscopic models</h5>
-	  
-	  \[
-	  
+
+	  <p style="text-align:left; font-size:25px;">
+
+\begin{equation*}
 \left\{
     \begin{aligned}
       & \dot{x}_{n} = v_{max} \\
       & \dot{x}_{i} = v \left( \dfrac{ \ell }{ x_{i+1} - x_{i} } \right), \quad &&i = 1,... , n-1
     \end{aligned}
 \right.
-	  
-	  \]
+\end{equation*}
+
+	  </p>
 
 	</section>
 
@@ -137,37 +143,41 @@ MathJax.Hub.Config({
 	data-background="LightYellow">
       <h3>Traffic models</h3>
 
-    IMMAGINE QUALITATIVA?
+	  <img src="images/qual.svg" alt="qualitativa" width="100%""/>
 
 	</section>
 
 
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="LightYellow">
+      <h3>Traffic models</h3>
+	  <h5>Theoretical analysis</h5>
+
+	</section>
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="LightYellow">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
-	</section>
+	  <p style="text-align:left; font-size:25px;">
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
-      <h3>Traffic models</h3>
-	  <h5>Theoretical analysis</h5>
+Consider the Cauchy problem:
 
 \begin{equation}
 \label{cauchy}
 \left\{
     \begin{aligned}
         & \rho_{t} + \left(f(\rho)\right)_{x} = 0, \quad &&(t,x) \in (0, +\infty) \times \mathbb{R}, \\
-        & \rho(0,x) = \bar{\rho}(x) \quad &&x \in \mathbb{R},
+        & \rho(0,x) = \bar{\rho}(x), \quad &&x \in \mathbb{R},
     \end{aligned}
 \right.
 \end{equation}
-
-        <p style="text-align:left; font-size:30px;">
-        where $f(\rho)\ \dot{=}\ \rho\ v(\rho)$.
-        </p>
+</p>
+	  <p style="text-align:left; font-size:25px;">
+where $f(\rho)\ \dot{=}\ \rho\ v(\rho)$.
+</p>
         
 	</section>
 
@@ -178,16 +188,15 @@ MathJax.Hub.Config({
 	  <h5>Theoretical analysis</h5>
 
       <p style="text-align:left; font-size:25px;">
-  	  The main properties of the solutions of the Cauchy problem are:	  
-      	  <ul style="text-align:left; font-size:25px;">
+  	  Main properties of the solutions of \eqref{cauchy}:	  
+      	  	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
 	            <li>if $\bar{\rho}$ has compact support $\implies$ the support of any solution has a finite speed of propagation;</li>
 	            <li>The Maximum Principle holds true;</li>
 	            <li>if $\bar{\rho}(x) \geq 0 \implies \rho(x) \geq 0 \quad \forall t >0$;</li>
-	            <li>The total mass $\int_{\mathbb{R}} \rho(t, x)\, dx$ is time independent:
-	            \[
-              \int_{\mathbb{R}} \rho(t, x)\, dx = L\ \dot{=} \int_{\mathbb{R}} \bar{\rho}(x)\, dx \quad  \forall t \geq 0.
-	            
-	            \]
+	            <li>$\int_{\mathbb{R}} \rho(t, x)\, dx$ is time independent:
+\begin{equation*}
+              \int_{\mathbb{R}} \rho(t, x)\, dx = L\ \dot{=} \int_{\mathbb{R}} \bar{\rho}(x)\, dx \quad  \forall t \geq 0.  
+\end{equation*}
 	            </li>
 	      </ul>
       </p>
@@ -501,7 +510,7 @@ R^{n}_{0}(t)\ \dot{=}\ R^{n}_{1}(t), \qquad R^{n}_{n}(t)\ \dot{=}\ R^{n}_{n-1}(t
 
 $\rho^{n}(t,x)$ has the properties:
 
-  <ul style="text-align:left; font-size:25px;">
+  	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
 $\int_{\mathbb{R}}\rho^{n}(t,x) dx\ = n,$;
         </li>
@@ -527,7 +536,7 @@ $\|\rho^{n}(t,\cdot)\|_{\mathcal{L}^{\infty}(\mathbb{R})} \leq R\ \dot{=}\ \|\ba
 
 If $\text{supp}\left[ \bar{\rho} \right]$ is bounded either from above or from below, then we can improve the construction as follows:
 
-  <ul style="text-align:left; font-size:25px;">
+  	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
 <b>$\text{supp}\left[ \bar{\rho} \right]$ bounded from above</b>:
 <br>
@@ -729,7 +738,7 @@ Assume \eqref{hp:rho} and \eqref{hp:v} are satisfied. There exists a constant $C
   Assume further that:
 </i>
 
-   <ul style="text-align:left; font-size:25px;">
+   	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
 $\sup_{n \in \mathbb{N}} \left[ \int_{0}^{T} \big[ \| v(\rho^{n}(t, \cdot)) \|_{\mathcal{L}^{1} ( \left[ a,b \right] ) } + TV \left( v(\rho^{n}(t,\cdot));\ \left[ a,b \right] \right)  \big] dt \right] < +\infty,$
         </li>
@@ -1251,7 +1260,7 @@ he optimal control problem proposed for parameter identification can be expresse
 <b>Definition 3</b>.
   A <i>Feed-Forward Artificial Neural Network (NN) </i> is characterized by the structure:
 </p>
-   <ul style="text-align:left; font-size:20px;">
+   	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
 Input layer:
 <br>
@@ -1338,7 +1347,7 @@ For $z > 0$, we model the velocity function as:
 
 </p>
 
-   <ul style="text-align:left; font-size:20px;">
+   	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
 $ W_{u}^{i,i+1} (z) = v_{0}\, \text{log}(z)$ for the logarithmic case;
         </li>
@@ -1412,7 +1421,7 @@ with initial data $x(0) = x_{0}$ and $u = \left(v_0, u_{Net}\right)$.
 
 </p>
 
-   <ul style="text-align:left; font-size:20px;">
+   	  <ul style="text-align:left; font-size:20px; line-height: 40px;">
         <li>
 $u = \left( L, v_{0} \right) \in \mathbb{R}^{2}$ in the LWR traffic model
         </li>
@@ -1593,7 +1602,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
     The aims of this study were:
     </p>
 
-	  <ul style="font-size:25px; line-height: 40px;">
+	  	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
 	    <li class="fragment">Analysis of the connection between microscopic and macroscopic modeling, outlining the necessary conditions for the discrete-to-continuum transition in traffic models;</li>
 	    <li class="fragment">Application of Neural Network-driven models to describe traffic dynamics scenarios.</li>
 	  </ul>
@@ -1607,7 +1616,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 Immediate developments of this work may involve:
     </p>
 
-  <ul style="font-size:25px; line-height: 40px;">
+  	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
     <li class="fragment">Incorporating physics into Neural Networks using <i>Physics-Informed Neural Networks (PINNs)</i>;</li>
     <li class="fragment">Enhancing Neural Network architecture with <i>Recurrent Neural Networks (RNNs)</i>.</li>
   </ul>
