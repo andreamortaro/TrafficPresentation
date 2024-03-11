@@ -150,14 +150,14 @@ We aim to analyze interaction dynamics using data-driven techniques.
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
 	</section>
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -183,7 +183,7 @@ where $f(\rho)\ \dot{=}\ \rho\ v(\rho)$.
 
 
 <!--	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -204,7 +204,7 @@ where $f(\rho)\ \dot{=}\ \rho\ v(\rho)$.
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -240,7 +240,7 @@ Sometimes, we require extra-assumptions:
 
 
 <!--	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -262,7 +262,7 @@ v_{\text{max}}\ \dot{=}\ v(0),\quad v_{\text{max}} > 0
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -290,7 +290,7 @@ for all $\varphi \in \mathcal{C}_{c}^\infty((0, +\infty) \times \mathbb{R})$ and
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="LightYellow">
+	data-background="#FCF2E3">
       <h3>Traffic models</h3>
 	  <h5>Theoretical analysis</h5>
 
@@ -334,15 +334,15 @@ Then $\rho^{n}$ converges (up to a subsequence) almost everywhere and in $\mathc
 
 <p style="text-align:left;font-size:25px;">
 
-For $n \in \mathbb{N}$ sufficiently large, we set $\ell_{n} \dot{=}\ \frac{1}{n}$ and we define:
+For $n \in \mathbb{N}$ large, we set $\ell_{n} \dot{=}\ \frac{1}{n}$ and we define:
 
-\begin{equation*}
-\bar{x}^{n}_{1}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{-\infty}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\},
-\end{equation*}
+</p>
 
-and for $i\ \in\ \{2,...,n-1\}$ recursively:
+
+<p style="text-align:left;font-size:20px;">
 \begin{equation*}
-\bar{x}^{n}_{i}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{\bar{x}^{n}_{i-1}}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\}.
+\bar{x}^{n}_{1}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{-\infty}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\}, \\
+\bar{x}^{n}_{i}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{\bar{x}^{n}_{i-1}}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\} \; \forall i\ \in\ \{2,...,n-1\}.
 \end{equation*}
 
 </p>
@@ -350,7 +350,7 @@ and for $i\ \in\ \{2,...,n-1\}$ recursively:
 	</section>
 	
 	
-	<section data-auto-animate data-auto-animate-unmatched="fade"
+<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="#FFF0D6">
       <h3>Traffic models</h3>
 
@@ -371,7 +371,7 @@ and we have equal mass $\ell_{n}$ on each interval:
 
 </p>
 
-	</section>
+	</section>-->
 	
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
@@ -384,22 +384,17 @@ and we have equal mass $\ell_{n}$ on each interval:
 
 Let the particles $\{\bar{x}^{n}_{i}\}^{n-1}_{i=1}$ evolve according to the <i>Follow-The-Leader</i> system of ODEs:
 
-\begin{equation} \label{ftl}
+\begin{equation*} \label{ftl}
 \left\{
     \begin{aligned}
         & \dot{x}^{n}_{i}(t) = v(R^{n}_{i}(t)),\quad\ &i \in \{1,...,n-2\},\\
         & \dot{x}^{n}_{n-1}(t) = v_{max}, \\
         & x^{n}_{i}(0) = \bar{x}^{n}_{i},\quad\ &i \in \{1,...,n-1\}, \\
-    \end{aligned}
+    \end{aligned*}
 \right.
 \end{equation}
 
-where we define:
-
-\begin{equation} \label{Ri}
-R^{n}_{i}(t)\ \dot{=}\ \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)}, \qquad
-R\ \dot{=}\ \|\bar{\rho}\|_{\mathcal{L}^{\infty}(\mathbb{R})},
-\end{equation}
+where $R^{n}_{i}(t)\ \dot{=}\ \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)}$.
 
 </p>
 
@@ -438,11 +433,11 @@ x^{n}_{i+1}(t)-x^{n}_{i}(t) \geq \frac{\ell_{n}}{R}, \qquad i \in \{1,...,n-2\}.
 
 <p style="text-align:left;font-size:25px;">
 
-To get a time-depending density with unit mass we set two <i>artificial particles</i> $x^{n}_{0}(t)$ and $x^{n}_{n}(t)$ for all $t \geq 0$ as:
+To reconstruct density we set two <i>artificial particles</i> for all $t \geq 0$ as:
 
-\begin{equation} \label{artp}
+\begin{equation*}
 x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
-\end{equation}
+\end{equation*}
 
 and let
 \begin{equation*}
@@ -544,7 +539,7 @@ Then $\rho^{n}$ converges (up to a subsequence) almost everywhere and in $\mathc
 	</section>
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
+<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="#F0F1F9">
       <h3>Traffic models</h3>
 
@@ -556,9 +551,11 @@ A uniform control for the $\mathcal{BV}$-norm can be obtained in two different w
 
 </p>
 
-    </section>	
+    </section>	-->
+    
+    
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
+<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="#F0F1F9">
       <h3>Traffic models</h3>
 
@@ -581,10 +578,10 @@ TV\left[\rho^{n}(t,\cdot)\right] \leq TV\left[\rho^{n}(0,\cdot)\right] \leq TV\l
 
 </p>
 
-    </section>	
+    </section>-->	
 
 
-	<section data-auto-animate data-auto-animate-unmatched="fade"
+<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="#F0F1F9">
       <h3>Traffic models</h3>
 
@@ -620,57 +617,31 @@ is uniformly bounded with respect to $n$.
 
 </p>
 
-    </section>	
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="#F0F1F9">
-      <h3>Traffic models</h3>
-
-	  <h5>Sketch of the proof: compactness</h5>
-
-<p style="text-align:left;font-size:25px;">
-
-To achieve strong $\mathcal{L}^{1}$ compactness w.r.t. both $x$ and $t$ we consider <i>1-Wasserstein distance</i>.
-
-<br>
-<br>
-
-<b>Definition 2</b> (1-Wasserstein distance).
-<i>
-  Let $\mu$ be a probability measure on $\mathbb{R}$. Define the pseudo-inverse variable $X_{\mu} \in \mathcal{L}^{1}([0,1])$ as
-  \begin{equation*}
-    X_{\mu}(z)\ \dot{=}\ \inf\left\{ x \in \mathbb{R} : \mu \left( (-\infty,x] \right) > z \right\}.
-  \end{equation*}
-  
-  Given two probability measures $\mu$ and $\nu$ on $\mathbb{R}$, we set:
-  \begin{equation*}
-    W_{1}(\mu,\nu)\ \dot{=}\ \|X_{\mu} - X_{\nu}\|_{\mathcal{L}^1_{[0,1]}}.
-  \end{equation*}
-  
-</i>
-
-    </section>	
-
-<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="#F0F1F9">
-      <h3>Traffic models</h3>
-
-	  <h5>Sketch of the proof: compactness</h5>
-
-<p style="text-align:left;font-size:25px;">
-
-<b>Proposition 4</b>.
-<i>
-
-Assume \eqref{hp:rho} and \eqref{hp:v} are satisfied. There exists a constant $C$ independent of $n$, such that
-  \begin{equation*}
-    W_{1} (\rho^{n}(t,\cdot), \rho^{n}(s,\cdot) ) \leq C |t-s| \quad \forall \text{t,s} > 0.
-  \end{equation*}
-  
-</i>
-
     </section>-->
+   
+   
+   
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="#F0F1F9">
+      <h3>Traffic models</h3>
+
+	  <h5>Sketch of the proof: compactness</h5>
+
+<p style="text-align:left;font-size:25px;">
+<b>First way:</b>
+A uniform $\mathcal{BV}$ contraction property for $\rho^{n}$, which requires $\mathcal{BV}$ initial data \eqref{addhp:rho}.
+</p>
+
+<p style="text-align:left;font-size:25px;" class="fragment">
+<b>Second way:</b> Use the <i>discrete Oleinik-type inequality</i>, which doesn't require the extra-assumption \eqref{addhp:rho} on $\bar{\rho}$, but only \eqref{addhp:v} on $v$.
+
+</p>
+
+<p style="text-align:left;font-size:25px;" class="fragment">
+<b>Third way:</b> To achieve strong $\mathcal{L}^{1}$ compactness we consider <i>1-Wasserstein distance</i>.
+</p>
+
+    </section> 
 
 
 	<section data-auto-animate data-auto-animate-unmatched="fade"
@@ -680,6 +651,7 @@ Assume \eqref{hp:rho} and \eqref{hp:v} are satisfied. There exists a constant $C
 	  <h5>Sketch of the proof: compactness</h5>
 
 <p style="text-align:left;font-size:25px;">
+
 
 <b>Theorem 3</b> (Generalised Aubin-Lions lemma).
 
@@ -1128,22 +1100,20 @@ We take $N = 400$, final time $T = 0.5$ and $(L,v_0) = (0.0025,1)$.
 	  
 <p style="text-align:left;font-size:25px;">
 
-Consider $N$ agents with $ z_{i} : \left[ 0, T \right] \rightarrow \mathbb{R}^{d}$ and we obtain $ x_{i}^{u} : \left[ 0, T \right] \rightarrow \mathbb{R}^{d}$, where $u$ represent the control variables.
-The cost functional:
+Consider the cost functional:
 \begin{equation*}
   J \left( x(u);z \right)
   \, =\, \dfrac{1}{2} \int_{0}^{T} \| z(t) - x(t) \|^{2} dt
   \, =\, \dfrac{1}{2} \| z(t) - x(t) \|^{2}_{\mathcal{L}^{2}(\mathbb{R})}.
 \end{equation*}
 
-Consider the dynamics:
+and the dynamics is given by:
 
-\begin{equation} \label{x:dyn}
+\begin{equation*} \label{x:dyn}
 
 \frac{ d }{ dt } x_{i}
-  \, =\, \sum_{j = 1}^{N} W_{u}^{i,j} (x_{j} - x_{i}), \quad x_{i}(0) = z_{0}^{i}, \qquad i = 1, ..., N,
-\end{equation}
-where $W_{u}^{i,j}$ is the output of a neural network parameterized by $u$.
+  \, =\, \sum_{j = 1}^{N} W_{u}^{i,j} (x_{j} - x_{i}), \quad x_{i}(0) = z_{0}^{i}, \qquad i = 1, ..., N.
+\end{equation*}
 
 </p>	  
 	  
@@ -1157,7 +1127,7 @@ where $W_{u}^{i,j}$ is the output of a neural network parameterized by $u$.
 	  
 <p style="text-align:left;font-size:25px;">
 
-Let $z$ be the reference dataset and define the optimal control problem as:
+Define the optimal control problem as:
 
 <br>
 <br>
@@ -1302,8 +1272,7 @@ $ W_{u}^{i,i+1} (z) = v_{0} \left(1 - \dfrac{1}{z} \right)$ for the linear case.
 	  
 <p style="text-align:left;font-size:25px;">
 
-We parameterize the interactions of the follower–leader dynamic using $W_{u}$:
- 
+Consider $W_{u}$ as the output of a neural network parameterized by $u$:
 </p>
 
 <p style="text-align:left;font-size:20px;">
@@ -1374,7 +1343,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 	  
 	  <h5>Data-driven parameter estimation</h5>
 
-	  <img src="images/alg1.svg" alt="Pseuso Alg 1" width="80%""/>
+	  <img src="images/alg1.svg" alt="Pseuso Alg 1" width="60%""/>
 
 	</section>
 
@@ -1385,7 +1354,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 	  
 	  <h5>Data-driven parameter estimation</h5>
 
-	  <img src="images/alg2.svg" alt="Pseuso Alg 2" width="80%""/>
+	  <img src="images/alg2.svg" alt="Pseuso Alg 2" width="60%""/>
 
 	</section>
 
@@ -1395,7 +1364,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 	  
 	  <h5>Data-driven parameter estimation</h5>
 
-	  <img src="images/alg3.svg" alt="Pseuso Alg 3" width="80%""/>
+	  <img src="images/alg3.svg" alt="Pseuso Alg 3" width="60%""/>
 
 	</section>
 
@@ -1419,23 +1388,12 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 
 <p style="text-align:left;font-size:25px;">
 
-Initial values used are $v_{0} = 30~m/s$ and $L = 5~m$.
-The weights for the neural networks are initialized in $\, \mathcal{U} \left( \left[ -1, 1 \right] \right)$.
+Initial values are $v_{0} = 30~m/s$ and $L = 5~m$.
+The weights are initialized in $\, \mathcal{U} \left( \left[ -1, 1 \right] \right)$.
 
 </p>
 
-	  <img src="images/v0_NN10.svg" alt="v0 NN10" width="50%""/>
-
-	</section>
-
-
-	<section data-auto-animate data-auto-animate-unmatched="fade"
-	data-background="Azure">
-	  <h3>Model Calibration with Data</h3>
-	  
-	  <h5>Traffic Models Training Results</h5>
-
-	  <img src="images/v0_plot.svg" alt="v0 all" width="50%""/>
+	  <img src="images/v0_NN10.svg" alt="v0 NN10" width="40%""/>
 
 	</section>
 
@@ -1448,12 +1406,29 @@ The weights for the neural networks are initialized in $\, \mathcal{U} \left( \l
 
 <p style="text-align:left;font-size:25px;">
 
-Initial values used are $v_{0} = 30~m/s$ and $L = 5~m$.
+Initial values are $v_{0} = 30~m/s$ and $L = 5~m$.
+
+</p>
+
+
+	  <img src="images/v0_plot.svg" alt="v0 all" width="40%""/>
+
+	</section>
+
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="Azure">
+	  <h3>Model Calibration with Data</h3>
+	  
+	  <h5>Traffic Models Training Results</h5>
+
+<p style="text-align:left;font-size:25px;">
+
 Car lengths estimated using LWR-model with linear and logarithmic velocity, setting $L_{min} = 2~m$ as the lower bound.
 
 </p>
 
-	  <img src="images/tabella.svg" alt="v0 all" width="80%""/>
+	  <img src="images/tabella.svg" alt="v0 all" width="70%""/>
 
 	</section>
 
@@ -1475,12 +1450,12 @@ Car lengths estimated using LWR-model with linear and logarithmic velocity, sett
 	  
 	  <h5>Traffic Models Training Results</h5>
 
-	  <img src="images/denscomparison.svg" alt="NN vs LIN" width="100%""/>
+	  <img src="images/nnvslin.svg" alt="NN vs LIN" width="100%""/>
 
 	</section>
 
 
-<!--	<section data-auto-animate data-auto-animate-unmatched="fade"
+	<section data-auto-animate data-auto-animate-unmatched="fade"
 	data-background="Azure">
 	  <h3>Model Calibration with Data</h3>
 	  
@@ -1504,7 +1479,7 @@ Car lengths estimated using LWR-model with linear and logarithmic velocity, sett
 
 	  </table>
 
-	</section>-->
+	</section>
 
 
 
@@ -1562,6 +1537,15 @@ Immediate developments of this work may involve:
 
 	</section>
 
+
+	<section data-auto-animate data-auto-animate-unmatched="fade"
+	data-background="AliceBlue">
+
+        <p style="text-align:center; font-size:40px;">
+Thank you for your attention!
+    </p>
+
+	</section>
 
 
 
