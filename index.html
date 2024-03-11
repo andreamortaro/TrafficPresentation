@@ -129,7 +129,7 @@ We aim to analyze interaction dynamics using data-driven techniques.
 \left\{
     \begin{aligned}
       & \dot{x}_{n} = v_{max} \\
-      & \dot{x}_{i} = v \left( \dfrac{ \ell }{ x_{i+1} - x_{i} } \right), \quad &&i = 1,... , n-1
+      & \dot{x}_{i} = v \left( \dfrac{ \ell }{ x_{i+1} - x_{i} } \right), \quad &&i = 1,... , n-1.
     \end{aligned}
 \right.
 \end{equation*}
@@ -231,7 +231,7 @@ Sometimes, we require extra-assumptions:
 \end{equation}
 
 \begin{equation} \label{addhp:v}
-\mathbb{R}^{+} \ni \rho \mapsto \rho\ v'(\rho) \in \mathbb{R}^{-}
+\mathbb{R}^{+} \ni \rho \mapsto \rho\ v'(\rho) \in \mathbb{R}^{-}.
 \end{equation}
 
 </p>
@@ -339,9 +339,12 @@ For $n \in \mathbb{N}$ large, we set $\ell_{n} \dot{=}\ \frac{1}{n}$ and we defi
 </p>
 
 
-<p style="text-align:left;font-size:20px;">
+<p style="text-align:left;font-size:25px;">
 \begin{equation*}
-\bar{x}^{n}_{1}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{-\infty}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\}, \\
+\bar{x}^{n}_{1}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{-\infty}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\},
+\end{equation*}
+
+\begin{equation*}
 \bar{x}^{n}_{i}\ \dot{=}\ \text{sup} \bigg\{ x \in \mathbb{R}: \int_{\bar{x}^{n}_{i-1}}^{x} \bar{\rho}(x)\ dx\ < \ell_{n} \bigg\} \; \forall i\ \in\ \{2,...,n-1\}.
 \end{equation*}
 
@@ -384,15 +387,15 @@ and we have equal mass $\ell_{n}$ on each interval:
 
 Let the particles $\{\bar{x}^{n}_{i}\}^{n-1}_{i=1}$ evolve according to the <i>Follow-The-Leader</i> system of ODEs:
 
-\begin{equation*} \label{ftl}
+\begin{equation*}
 \left\{
     \begin{aligned}
         & \dot{x}^{n}_{i}(t) = v(R^{n}_{i}(t)),\quad\ &i \in \{1,...,n-2\},\\
         & \dot{x}^{n}_{n-1}(t) = v_{max}, \\
         & x^{n}_{i}(0) = \bar{x}^{n}_{i},\quad\ &i \in \{1,...,n-1\}, \\
-    \end{aligned*}
+    \end{aligned}
 \right.
-\end{equation}
+\end{equation*}
 
 where $R^{n}_{i}(t)\ \dot{=}\ \frac{\ell_{n}}{x^{n}_{i+1}(t)-x^{n}_{i}(t)}$.
 
@@ -433,7 +436,7 @@ x^{n}_{i+1}(t)-x^{n}_{i}(t) \geq \frac{\ell_{n}}{R}, \qquad i \in \{1,...,n-2\}.
 
 <p style="text-align:left;font-size:25px;">
 
-To reconstruct density we set two <i>artificial particles</i> for all $t \geq 0$ as:
+Set two <i>artificial particles</i> for all $t \geq 0$ as:
 
 \begin{equation*}
 x^{n}_{0}(t)\ \dot{=}\ 2x^{n}_{1}(t) - x^{n}_{2}(t),\qquad x^{n}_{n}(t)\ \dot{=}\ 2x^{n}_{n-1}(t) - x^{n}_{n-2}(t),
@@ -634,7 +637,6 @@ A uniform $\mathcal{BV}$ contraction property for $\rho^{n}$, which requires $\m
 
 <p style="text-align:left;font-size:25px;" class="fragment">
 <b>Second way:</b> Use the <i>discrete Oleinik-type inequality</i>, which doesn't require the extra-assumption \eqref{addhp:rho} on $\bar{\rho}$, but only \eqref{addhp:v} on $v$.
-
 </p>
 
 <p style="text-align:left;font-size:25px;" class="fragment">
@@ -1127,11 +1129,6 @@ and the dynamics is given by:
 	  
 <p style="text-align:left;font-size:25px;">
 
-Define the optimal control problem as:
-
-<br>
-<br>
-
 <b>Problem 1</b> .
 <i>
   Find $\bar{u} \in \mathcal{U}_{ad} := \left[ -1, 1 \right]^{K}$ such that
@@ -1140,7 +1137,6 @@ Define the optimal control problem as:
     \, =\, \min_{u\, \in\, \mathcal{U}_{ad}} J \left( x(u); z \right) \quad \text{subject to \eqref{x:dyn}},
   \end{equation*}
 </i>
-
 
 </p>  
 	  
@@ -1245,10 +1241,10 @@ For $z > 0$, we model the velocity function as:
 
    	  <ul style="text-align:left; font-size:25px; line-height: 40px;">
         <li>
-$ W_{u}^{i,i+1} (z) = v_{0}\, \text{log}(z)$ for the logarithmic case;
+$ W_{u}^{i,i+1} (z) = v_{0} \left(1 - \dfrac{1}{z} \right)$ for the linear case.
         </li>
         <li>
-$ W_{u}^{i,i+1} (z) = v_{0} \left(1 - \dfrac{1}{z} \right)$ for the linear case.
+$ W_{u}^{i,i+1} (z) = v_{0}\, \text{log}(z)$ for the logarithmic case;
         </li>
   </ul>
 
@@ -1386,7 +1382,7 @@ $u = \left(v_0, u_{Net}\right) \in \mathbb{R}^{2}$ in the artificial neural netw
 	  
 	  <h5>Traffic Models Training Results</h5>
 
-<p style="text-align:left;font-size:25px;">
+<p style="text-align:left; font-size:25px;">
 
 Initial values are $v_{0} = 30~m/s$ and $L = 5~m$.
 The weights are initialized in $\, \mathcal{U} \left( \left[ -1, 1 \right] \right)$.
@@ -1404,7 +1400,7 @@ The weights are initialized in $\, \mathcal{U} \left( \left[ -1, 1 \right] \righ
 	  
 	  <h5>Traffic Models Training Results</h5>
 
-<p style="text-align:left;font-size:25px;">
+<p style="text-align:left; font-size:25px;">
 
 Initial values are $v_{0} = 30~m/s$ and $L = 5~m$.
 
@@ -1422,7 +1418,7 @@ Initial values are $v_{0} = 30~m/s$ and $L = 5~m$.
 	  
 	  <h5>Traffic Models Training Results</h5>
 
-<p style="text-align:left;font-size:25px;">
+<p style="text-align:left; font-size:25px;">
 
 Car lengths estimated using LWR-model with linear and logarithmic velocity, setting $L_{min} = 2~m$ as the lower bound.
 
