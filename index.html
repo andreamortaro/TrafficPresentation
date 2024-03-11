@@ -271,10 +271,16 @@ v_{\text{max}}\ \dot{=}\ v(0),\quad v_{\text{max}} > 0
 <b>Definition 1</b> (Entropy solution).
 <i>Let the initial datum $\bar{\rho}$ satisfy \eqref{hp:rho}. A weak solution $\rho \in \mathcal{L}^\infty(\mathbb{R})$ to the Cauchy problem \eqref{cauchy} is called <b>entropy solution</b> to the Cauchy problem if:
 
+</p>
+
+<p style="text-align:left; font-size:22px;">	  
 \begin{equation*}
 \iint\limits_{\mathbb{R}^+ \times \mathbb{R}}
 \bigg[ |\rho(t,x) - k|\varphi_{t}(t,x)\ +\ \text{sign}(\rho(t,x) - k) \left[ f(\rho(t,x)) - f(k)\right]\varphi_{x}(t,x)\bigg] dx\ dt\ \geq 0
 \end{equation*}
+</p>
+
+<p style="text-align:left;font-size:25px;">
 
 for all $\varphi \in \mathcal{C}_{c}^\infty((0, +\infty) \times \mathbb{R})$ and for all $k \geq 0$.</i>
 
@@ -1151,8 +1157,9 @@ where $W_{u}^{i,j}$ is the output of a neural network parameterized by $u$.
 	  
 <p style="text-align:left;font-size:25px;">
 
-Let $z$ be the reference dataset and define the optimal control problem for parameter identification as:
+Let $z$ be the reference dataset and define the optimal control problem as:
 
+<br>
 <br>
 
 <b>Problem 1</b> .
@@ -1261,7 +1268,7 @@ Let $x_{i}(t)$ denote the position of the $i$-th car at time $t \in \left[ 0, T\
 </p>
 
 <p style="text-align:left;font-size:25px;">
-where $v_{0}$ is the velocity of the leading car and $L$ the length of the cars.
+<!--where $v_{0}$ is the velocity of the leading car and $L$ the length of the cars.-->
 For $z > 0$, we model the velocity function as:
 
 </p>
@@ -1315,7 +1322,7 @@ We parameterize the interactions of the follower–leader dynamic using $W_{u}$:
 
 <p style="text-align:left;font-size:25px;">
 
-with initial data $x(0) = x_{0}$ and $u = \left(v_0, u_{Net}\right)$.
+where $u = \left(v_0, u_{Net}\right)$.
 
 </p>
 
